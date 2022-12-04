@@ -1,0 +1,38 @@
+[
+    {
+        "ID": "100000",
+        "UsuarioID": "",
+        "PeliculaID": "",
+        "Fecha_compra": "10/10/2022"
+    },
+    {
+        "ID": "100001",
+        "UsuarioID": "",
+        "PeliculaID": "",
+        "Fecha_compra": "09/07/2009"
+    },
+    {
+        "ID": "100002",
+        "UsuarioID": "",
+        "PeliculaID": "",
+        "Fecha_compra": "04/06/2010"
+    },
+    {
+        "ID": "100003",
+        "UsuarioID": "",
+        "PeliculaID": "",
+        "Fecha_compra": "01/01/2018"
+    },
+    {
+        "ID": "100004",
+        "UsuarioID": "",
+        "PeliculaID": "",
+        "Fecha_compra": "08/02/2016"
+    },
+    {
+        "ID": "100005",
+        "UsuarioID": "",
+        "PeliculaID": "",
+        "Fecha_compra": "01/06/2018"
+    }
+]

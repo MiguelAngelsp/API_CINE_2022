@@ -1,0 +1,44 @@
+[
+    {
+        "ID": "1000",
+        "Titulo": "El padrino",
+        "GeneroID": "004",
+        "Descripcion": "Don Vito Corleone es el respetado y temido jefe de una de las cinco familias de la mafia de Nueva York en los años 40. El hombre tiene cuatro hijos: Connie, Sonny, Fredo y Michael, que no quiere saber nada de los negocios sucios de su padre. Cuando otro capo, Sollozzo, intenta asesinar a Corleone, empieza una cruenta lucha entre los distintos clanes.",
+        "ValoracionID": ""
+    },
+    {
+        "ID": "1001",
+        "Titulo": "La lista de Schindler",
+        "GeneroID": "",
+        "Descripcion": "Oskar Schindler, un hombre de enorme astucia y talento organiza un ambicioso plan para ganarse la simpatía de los nazis y a la vez poder rescatar a miles de judíos.",
+        "ValoracionID": ""
+    },
+    {
+        "ID": "1002",
+        "Titulo": "Un monstruo viene a verme",
+        "GeneroID": "",
+        "Descripcion": "Tras la separación de sus padres, Connor tiene que llevar las riendas de su casa ya que su madre está enferma de cáncer. El pequeño intentará superar sus miedos y fobias con la ayuda de un monstruo con el que se encuentra todas las noches. Sus fantasías tendrán que enfrentarse con la realidad y con su fría y calculadora abuela.",
+        "ValoracionID": ""
+    },
+    {
+        "ID": "1003",
+        "Titulo": "Mientras dure la guerra",
+        "GeneroID": "",
+        "Descripcion": "España. Verano de 1936. El célebre escritor Miguel de Unamuno decide apoyar públicamente la rebelión militar que promete traer orden a la convulsa situación del país. Inmediatamente es destituido por el gobierno republicano como rector de la Universidad de Salamanca.Mientras tanto, el general Franco consigue sumar sus tropas al frente sublevado e inicia una exitosa campaña con la secreta esperanza de hacerse con el mando único de la guerra.",
+        "ValoracionID": ""
+    },
+    {
+        "ID": "1004",
+        "Titulo": "Gran Torino",
+        "GeneroID": "",
+        "Descripcion": "Walt Kowalski, un veterano de la guerra de Corea, es un obrero jubilado del sector del automóvil que ha enviudado recientemente. Su máxima pasión es cuidar de su más preciado tesoro: un coche Gran Torino de 1972. Es un hombre inflexible y cascarrabias, al que le cuesta trabajo asimilar los cambios que se producen a su alrededor, especialmente la llegada de multitud de inmigrantes asiáticos a su barrio. Sin embargo, las circustancias harán que se vea obligado a replantearse sus ideas.",
+        "ValoracionID": ""
+    },
+    {
+        "ID": "1005",
+        "Titulo": "Parásitos",
+        "GeneroID": "",
+        "Descripcion": "Tanto Gi Taek como su familia están sin trabajo. Cuando su hijo mayor, Gi Woo, empieza a recibir clases particulares en la adinerada casa de Park, las dos familias, que tienen mucho en común pese a pertenecer a dos mundos totalmente distintos, comienzan una relación de resultados imprevisibles.",
+        "ValoracionID": ""
+    }
+]

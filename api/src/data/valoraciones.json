@@ -1,0 +1,44 @@
+[
+    {
+        "ID": "10000",
+        "Puntuacion": "8,5",
+        "Comentario": "Oscuramente impredecible y resonantemente autentica, esta historia criminal ganadora del Óscar basada en literatura si puede depender en gran medida de la interpretación del espectador, pero todos pueden coincidir en una cosa: El Padrino (1972), es una película espectacular. Esta obra de arte de Francis Ford Coppola considerada sagrada en su género, tiene un estilo hermoso, comprende temas importantes como las relaciones sociofamiliares y la reflexión humana, y prácticamente funciona sin errores en términos de dirección, dialogo, actuación, rodaje, desarrollo de personajes, construcción narrativa, fotografía y mucho mas que apenas cabe en mi reseña. ",
+        "UsuarioID": "",
+        "PeliculaID": ""
+    },
+    {
+        "ID": "10001",
+        "Puntuacion": "8",
+        "Comentario": "Una obra maestra, indiscutiblemente uno de las mejores películas de todos los tiempos. Spielberg hace de nuevo prueba de su genialidad, John Williams se luce en la música, y todos hacen su trabajo de forma sobresaliente. Una película muy dura y realista sobre el holocausto judío y de sus horrores. Sin embargo, no te va a dar ganas de verla en mucho tiempo.",
+        "UsuarioID": "",
+        "PeliculaID": ""
+    },
+    {
+        "ID": "10002",
+        "Puntuacion": "6,4",
+        "Comentario": "¿Qué es la vida?, ciertamente es neblina que pasa por un cierto de tiempo y luego se desvanece... Pensamos en nosotros mismos siempre sin darnos cuenta de lo que sucede en este momento no nos deleitamos del momento, sino dejamos que se nos escape como el agua entre los dedos. La historia es dura a pesar de ser un niño pero cuando la verdad habla; quién puede con ella? No se trata de tener coraje o ser valiente sino que esto habla de resiliencia, la consistencia, la sustancia, la materia prima de la vida; el amor.",
+        "UsuarioID": "",
+        "PeliculaID": ""
+    },
+    {
+        "ID": "10003",
+        "Puntuacion": "10",
+        "Comentario": "La película refleja bien a los 2 extremos sociales, y como los más pobres y los más ricos se necesitan mutuamente y se aprovechan los unos de los otros. Por un lado, los más ricos necesitan personas que hagan aseo, choferes o ayudantes personales que acepten pago sin prestaciones, y por otro lado los más pobres necesitan dinero y empleo que el mercado laboral no les puede dar pues como se ve en la película, muchas veces no tienen estudios o profesiones con los que puedan competir en el mercado laboral y aspirar a ser de clase media. ",
+        "UsuarioID": "",
+        "PeliculaID": ""
+    },
+    {
+        "ID": "10004",
+        "Puntuacion": "9,2",
+        "Comentario": "Muy correcta película de Alejandro Amenábar. Indudablemente una película que ha recibido mucha crítica por aquellos que la ven con ojos e intereses meramente políticos, pero es que al final hay que quedarse con lo que dice Unamuno 'Esta es una guerra incivil de partidarios del fascismo y del bolchevismo que no son más que las caras cóncava y convexa de la misma enfermedad mental. La antipatria no existe, sin unos y otros España quedará mutilada'",
+        "UsuarioID": "",
+        "PeliculaID": ""
+    },
+    {
+        "ID": "10005",
+        "Puntuacion": "7,6",
+        "Comentario": "98765678V",
+        "UsuarioID": "",
+        "PeliculaID": "Clint nos presenta a un héroe de Guerra claramente xenófobo y chapado a la antigua. Un viejo gruñón cuyo vecindario se ha visto 'invadido' por migrantes hmong y con una familia que solo desea su propiedad y el tesoro que tiene en su cochera un Gran Torino (No, no es una película de carreras). Me encantó como se desarrolla la historia, mantiene un excelente ritmo a la par de una fotografía no excelsa pero basta para la narrativa."
+    }
+]
