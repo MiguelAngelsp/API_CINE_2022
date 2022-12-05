@@ -1,6 +1,7 @@
 import { Injectable, InternalServerErrorException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
+import { GenerosService } from '../generos/generos.service';
 import { CreatePeliculaDto } from './dto/create-pelicula.dto';
 import { UpdatePeliculaDto } from './dto/update-pelicula.dto';
 import { Pelicula } from './entities/pelicula.entity';
@@ -9,25 +10,26 @@ import { Pelicula } from './entities/pelicula.entity';
 export class PeliculasService {
   constructor(
     @InjectRepository(Pelicula)
-    private readonly peliculaRepository: Repository<Pelicula>
-  ){
+    private readonly peliculaRepository: Repository<Pelicula>,
+    private readonly generoService: GenerosService
+  ) {
 
   }
-  async create(createPeliculaDto: CreatePeliculaDto) {
+  async create(createProductoDto: CreatePeliculaDto) {
 
     try {
-      //crea la instancia del producto con sus propiedades
-      const pelicula = this.peliculaRepository.create(createPeliculaDto);
-      // Lo graba e impacta en la BD
-      await this.peliculaRepository.save(pelicula);
-      return pelicula;
+      const { GeneroID, ...campos } = createProductoDto;
+      // console.log({...campos});
+      const genero = this.generoService.findOne(GeneroID);
+      const pelicula = this.peliculaRepository.create({ ...campos });
+      pelicula.genero = await this.generoService.findOne(GeneroID);
+      // //se lanza la petición sl SGBD (postgres). Esperar (x seg)
+      await this.peliculaRepository.save(pelicula)
+      return pelicula
     } catch (error) {
-      console.log(error);
-      throw new InternalServerErrorException('Ayuda!')
+      return new InternalServerErrorException('Error en BD')
     }
- 
   }
-
   findAll() {
     return `This action returns all peliculas`;
   }

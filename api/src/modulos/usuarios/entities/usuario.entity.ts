@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Perfil } from "src/modulos/perfil/entities/perfil.entity";
+import { Column, Entity, OneToOne, PrimaryGeneratedColumn } from "typeorm";
 @Entity('usuarios')
 
 export class Usuario {
@@ -35,5 +36,13 @@ export class Usuario {
         nullable: true
     })
     Tarjeta_banco: string;
+
+    //Relacion uno a uno
+    @OneToOne(
+        (type) => Perfil,
+        (perfil) => perfil.usuario,
+        { cascade:false }
+    )
+    perfil?: Perfil
 
 }

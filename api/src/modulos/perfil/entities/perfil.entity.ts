@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Usuario } from "src/modulos/usuarios/entities/usuario.entity";
+import { Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from "typeorm";
 @Entity('perfiles')
 
 export class Perfil {
@@ -29,4 +30,12 @@ export class Perfil {
         unique: true
     })
     GitHub: string;
+
+    //Relacion uno a uno
+    @OneToOne(
+        () => Usuario,
+        (usuario) => usuario.perfil
+    )
+    @JoinColumn()
+    usuario?: Usuario
 }

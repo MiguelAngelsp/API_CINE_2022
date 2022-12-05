@@ -1,10 +1,10 @@
 import { IsNumber, IsString, MaxLength } from "class-validator";
 
 export class CreateGeneroDto {
-    @IsNumber()
-    ID: number;
+    // @IsString()
+    // ID: string;
     
     @IsString()
-    @MaxLength(20)
+    // @MaxLength(20)
     Genero: string;
 }

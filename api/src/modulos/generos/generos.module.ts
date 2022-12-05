@@ -9,6 +9,9 @@ import { TypeOrmModule } from '@nestjs/typeorm';
   providers: [GenerosService],
   imports: [
     TypeOrmModule.forFeature([Genero])
+  ],
+  exports:[
+    GenerosService
   ]
 })
 export class GenerosModule {}

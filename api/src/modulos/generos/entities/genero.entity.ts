@@ -4,7 +4,7 @@ import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 
 export class Genero {
     @PrimaryGeneratedColumn("uuid")
-    ID: number;
+    ID: string;
 
     @Column('text', {
         unique: true

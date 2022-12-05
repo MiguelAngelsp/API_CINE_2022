@@ -17,11 +17,6 @@ export class GenerosController {
     return this.generosService.findAll();
   }
 
-  @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.generosService.findOne(+id);
-  }
-
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateGeneroDto: UpdateGeneroDto) {
     return this.generosService.update(+id, updateGeneroDto);
