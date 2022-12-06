@@ -1,11 +1,12 @@
+import { Pelicula } from "src/modulos/peliculas/entities/pelicula.entity";
 import { Perfil } from "src/modulos/perfil/entities/perfil.entity";
-import { Column, Entity, OneToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, OneToMany, OneToOne, PrimaryGeneratedColumn } from "typeorm";
 @Entity('usuarios')
 
 export class Usuario {
     
     @PrimaryGeneratedColumn("uuid")
-    ID: number;
+    ID: string;
 
     @Column('text',{
         unique: true
@@ -39,10 +40,19 @@ export class Usuario {
 
     //Relacion uno a uno
     @OneToOne(
-        (type) => Perfil,
+        () => Perfil,
         (perfil) => perfil.usuario,
         { cascade:false }
     )
     perfil?: Perfil
+
+    //Relacion a usuario
+    @OneToMany(
+        () => Pelicula,
+        (Pelicula) => Pelicula.usuario,
+        { cascade: false }
+    )
+
+    peliculas?: Pelicula
 
 }

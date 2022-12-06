@@ -4,12 +4,7 @@ import { Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from "ty
 
 export class Perfil {
     @PrimaryGeneratedColumn("uuid")
-    ID: number;
-
-    @Column('text',{
-        unique: true
-    })
-    UsuarioID: number;
+    ID: string;
 
     @Column('text',{
         nullable: true

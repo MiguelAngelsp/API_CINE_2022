@@ -1,11 +1,11 @@
-import { IsEmail, IsNumber, IsString, MaxLength } from "class-validator";
+import { IsString, MaxLength } from "class-validator";
 
 export class CreatePerfilDto {
 
     @IsString()
     UsuarioID: string;
     
-    @IsEmail()
+    @IsString()
     @MaxLength(25)
     Correo: string;
 

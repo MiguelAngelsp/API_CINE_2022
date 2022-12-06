@@ -9,37 +9,51 @@ import { Usuario } from './entities/usuario.entity';
 export class UsuariosService {
   constructor(
     @InjectRepository(Usuario)
-    private readonly clienteRepository: Repository<Usuario>
+    private readonly usuarioRepository: Repository<Usuario>
   ) {
 
   }
-  async create(createClienteDto: CreateUsuarioDto) {
+  async create(createUsuarioDto: CreateUsuarioDto) {
     try {
       //crea la instancia del producto con sus propiedades
-      const cliente = this.clienteRepository.create(createClienteDto);
+      const usuario = this.usuarioRepository.create(createUsuarioDto);
       // Lo graba e impacta en la BD
-      await this.clienteRepository.save(cliente);
-      return cliente;
+      await this.usuarioRepository.save(usuario);
+      return usuario;
     } catch (error) {
       console.log(error);
       throw new InternalServerErrorException('Ayuda!')
     }
  
   }
-
   findAll() {
-    return `This action returns all usuarios`;
+    return this.usuarioRepository.find({});
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} usuario`;
+  findOne(ID: string) {
+    return this.usuarioRepository.findOne({
+      where: { 
+        ID 
+      },
+      relations: {
+          peliculas: true,
+      }
+    });
   }
 
-  update(id: number, updateUsuarioDto: UpdateUsuarioDto) {
-    return `This action updates a #${id} usuario`;
+  // findAll() {
+  //   return `This action returns all usuarios`;
+  // }
+
+  // findOne(id: number) {
+  //   return `This action returns a #${id} usuario`;
+  // }
+
+  update(ID: number, updateUsuarioDto: UpdateUsuarioDto) {
+    return `This action updates a #${ID} usuario`;
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} usuario`;
+  remove(ID: number) {
+    return `This action removes a #${ID} usuario`;
   }
 }

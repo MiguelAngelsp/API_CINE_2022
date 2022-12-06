@@ -1,4 +1,5 @@
 import { Genero } from "src/modulos/generos/entities/genero.entity";
+import { Usuario } from "src/modulos/usuarios/entities/usuario.entity";
 import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 @Entity('peliculas')
 
@@ -29,4 +30,13 @@ export class Pelicula {
     )
 
     genero?: Genero
+
+    //Relacion a usuarios
+    @ManyToOne(
+        () => Usuario,
+        (usuario) => usuario.peliculas,
+        { cascade: false }
+    )
+
+    usuario?: Usuario
 }

@@ -1,7 +1,9 @@
-import { IsNumber, IsString, MaxLength } from "class-validator";
+import { IsString, MaxLength } from "class-validator";
 
 export class CreateUsuarioDto {
-    
+    // @IsString()
+    // ID: string;
+
     @IsString()
     @MaxLength(9)
     DNI: string;
