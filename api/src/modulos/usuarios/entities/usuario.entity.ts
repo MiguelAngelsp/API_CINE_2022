@@ -46,7 +46,7 @@ export class Usuario {
     )
     perfil?: Perfil
 
-    //Relacion a usuario
+    //Relacion a pelicula
     @OneToMany(
         () => Pelicula,
         (Pelicula) => Pelicula.usuario,
