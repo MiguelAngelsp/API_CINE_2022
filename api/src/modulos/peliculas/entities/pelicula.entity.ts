@@ -1,6 +1,7 @@
 import { Genero } from "src/modulos/generos/entities/genero.entity";
 import { Usuario } from "src/modulos/usuarios/entities/usuario.entity";
-import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Valoracion } from "src/modulos/valoraciones/entities/valoracion.entity";
+import { Column, Entity, ManyToOne, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 @Entity('peliculas')
 
 export class Pelicula {
@@ -31,12 +32,13 @@ export class Pelicula {
 
     genero?: Genero
 
-    //Relacion a usuarios
+
+    //Relacion a valoraciones
     @ManyToOne(
-        () => Usuario,
-        (usuario) => usuario.peliculas,
+        () => Valoracion,
+        (valoracion) => valoracion.pelicula,
         { cascade: false }
     )
 
-    usuario?: Usuario
+    valoraciones?: Valoracion
 }
