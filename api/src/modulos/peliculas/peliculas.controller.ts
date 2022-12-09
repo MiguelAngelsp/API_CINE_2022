@@ -19,7 +19,7 @@ export class PeliculasController {
 
   @Get(':id')
   findOne(@Param('id') id: string) {
-    return this.peliculasService.findOne(+id);
+    return this.peliculasService.findOne(id);
   }
 
   @Patch(':id')

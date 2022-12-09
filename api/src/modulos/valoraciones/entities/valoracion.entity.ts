@@ -28,11 +28,11 @@ export class Valoracion {
     usuario?: Usuario
 
      //Relacion a peliculas
-     @ManyToOne(
+     @OneToMany(
         () => Pelicula,
         (pelicula) => pelicula.valoraciones,
         {cascade: true}
     )
-    pelicula?: Pelicula
+    peliculas?: Pelicula
 
 }

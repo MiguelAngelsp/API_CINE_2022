@@ -36,7 +36,7 @@ export class UsuariosService {
         ID 
       },
       relations: {
-          peliculas: true,
+          valoraciones: true,
       }
     });
   }

@@ -1,3 +1,4 @@
+import { Cesta } from "src/modulos/cesta/entities/cesta.entity";
 import { Genero } from "src/modulos/generos/entities/genero.entity";
 import { Usuario } from "src/modulos/usuarios/entities/usuario.entity";
 import { Valoracion } from "src/modulos/valoraciones/entities/valoracion.entity";
@@ -6,7 +7,7 @@ import { Column, Entity, ManyToOne, OneToMany, PrimaryGeneratedColumn } from "ty
 
 export class Pelicula {
     @PrimaryGeneratedColumn("uuid")
-    ID: number;
+    ID: string;
 
     @Column('text',{
         unique: true
@@ -18,11 +19,6 @@ export class Pelicula {
     })
     Descripcion: string;
 
-    // @Column('numeric',{
-    //     unique: true
-    // })
-    // ValoracionID: number;
-
     //Relacion
     @ManyToOne(
         () => Genero,
@@ -32,13 +28,21 @@ export class Pelicula {
 
     genero?: Genero
 
-
     //Relacion a valoraciones
     @ManyToOne(
         () => Valoracion,
-        (valoracion) => valoracion.pelicula,
+        (valoracion) => valoracion.peliculas,
         { cascade: false }
     )
 
     valoraciones?: Valoracion
+
+    //Relacion a cesta
+    @OneToMany(
+        () => Cesta,
+        (cesta) => cesta.peliculas,
+        { cascade: false }
+    )
+
+    cesta?:Cesta[];
 }

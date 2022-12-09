@@ -31,11 +31,18 @@ export class PeliculasService {
     }
   }
   findAll() {
-    return `This action returns all peliculas`;
+    return this.peliculaRepository.find({});
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} pelicula`;
+  findOne(ID: string) {
+    return this.peliculaRepository.findOne({
+      where: { 
+        ID 
+      },
+      relations: {
+          cesta: true,
+      }
+    });
   }
 
   update(id: number, updatePeliculaDto: UpdatePeliculaDto) {

@@ -1,3 +1,4 @@
+import { Cesta } from "src/modulos/cesta/entities/cesta.entity";
 import { Pelicula } from "src/modulos/peliculas/entities/pelicula.entity";
 import { Perfil } from "src/modulos/perfil/entities/perfil.entity";
 import { Valoracion } from "src/modulos/valoraciones/entities/valoracion.entity";
@@ -47,14 +48,14 @@ export class Usuario {
     )
     perfil?: Perfil
 
-    //Relacion a pelicula
-    @OneToMany(
-        () => Pelicula,
-        (Pelicula) => Pelicula.valoraciones,
-        { cascade: false }
-    )
+    // //Relacion a pelicula
+    // @OneToMany(
+    //     () => Pelicula,
+    //     (Pelicula) => Pelicula.valoraciones,
+    //     { cascade: false }
+    // )
 
-    peliculas?: Pelicula
+    // peliculas?: Pelicula
 
     //Relacion a valoracion
     @OneToMany(

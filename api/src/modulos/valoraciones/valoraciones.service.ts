@@ -31,13 +31,20 @@ async create(createValoracionDto: CreateValoracionDto) {
 
 }
 
-  findAll() {
-    return `This action returns all valoraciones`;
-  }
+findAll() {
+  return this.valoracionRepository.find({});
+}
 
-  findOne(id: number) {
-    return `This action returns a #${id} valoracione`;
-  }
+findOne(ID: string) {
+  return this.valoracionRepository.findOne({
+    where: { 
+      ID 
+    },
+    relations: {
+        peliculas: true,
+    }
+  });
+}
 
   update(id: number, updateValoracionDto: UpdateValoracionDto) {
     return `This action updates a #${id} valoracione`;

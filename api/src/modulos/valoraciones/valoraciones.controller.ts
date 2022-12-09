@@ -19,7 +19,7 @@ export class ValoracionesController {
 
   @Get(':id')
   findOne(@Param('id') id: string) {
-    return this.valoracionesService.findOne(+id);
+    return this.valoracionesService.findOne(id);
   }
 
   @Patch(':id')

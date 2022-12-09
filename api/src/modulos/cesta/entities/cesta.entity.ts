@@ -1,22 +1,22 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Pelicula } from "src/modulos/peliculas/entities/pelicula.entity";
+import { Usuario } from "src/modulos/usuarios/entities/usuario.entity";
+import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 @Entity('cesta')
 
 export class Cesta {
     @PrimaryGeneratedColumn("uuid")
-    ID: number;
-
-    @Column('text',{
-        unique: true
-    })
-    UsuarioID: number;
-
-    @Column('text',{
-        unique: true
-    })
-    PeliculaID: number;
+    ID: string;
 
     @Column('date',{
         unique: true
     })
     Fecha_compra: Date;
+
+    //Relacion a usuarios
+    @ManyToOne(
+        () => Pelicula,
+        (pelicula) => pelicula.cesta,
+        {cascade: true}
+    )
+    peliculas?: Pelicula
 }
