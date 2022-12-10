@@ -13,6 +13,9 @@ export class CreatePeliculaDto {
     @MaxLength(400)
     Descripcion: string;
 
+    @IsNumber()
+    Precio: number;
+
     @IsString()
     GeneroID?: string;
 

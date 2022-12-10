@@ -1,6 +1,6 @@
 import { Pelicula } from "src/modulos/peliculas/entities/pelicula.entity";
 import { Usuario } from "src/modulos/usuarios/entities/usuario.entity";
-import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, JoinColumn, ManyToOne, OneToOne, PrimaryGeneratedColumn } from "typeorm";
 @Entity('cesta')
 
 export class Cesta {
@@ -19,4 +19,15 @@ export class Cesta {
         {cascade: true}
     )
     peliculas?: Pelicula
+
+    //Relacion uno a uno a Usuarios
+    @OneToOne(
+        () => Usuario,
+        (usuario) => usuario.cesta
+    )
+    @JoinColumn()
+    usuario?: Usuario
+
+    //Disparadores
+    
 }

@@ -66,4 +66,12 @@ export class Usuario {
 
     valoraciones?:Valoracion
 
+    //Relacion uno a uno a Cesta
+    @OneToOne(
+        () => Cesta,
+        (cesta) => cesta.usuario,
+        { cascade:false }
+    )
+    cesta?: Cesta
+
 }

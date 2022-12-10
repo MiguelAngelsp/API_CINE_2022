@@ -2,8 +2,8 @@ import { IsDate, IsNumber, IsString } from "class-validator";
 
 export class CreateCestaDto {
 
-    // @IsString()
-    // UsuarioID: string;
+    @IsString()
+    UsuarioID: string;
     
     @IsString()
     PeliculaID: string;

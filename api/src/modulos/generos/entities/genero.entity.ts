@@ -1,5 +1,5 @@
 import { Pelicula } from "src/modulos/peliculas/entities/pelicula.entity";
-import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
+import { BeforeInsert, Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 @Entity('generos')
 
 export class Genero {
@@ -18,4 +18,11 @@ export class Genero {
         { cascade: false }
     )
     peliculas?: Pelicula[];
+
+    //Disparadores
+    @BeforeInsert()
+    MayusTitulo(){
+        this.Genero = this.Genero.toUpperCase()
+        
+    }
 }

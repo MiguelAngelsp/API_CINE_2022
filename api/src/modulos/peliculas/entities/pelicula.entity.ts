@@ -2,7 +2,7 @@ import { Cesta } from "src/modulos/cesta/entities/cesta.entity";
 import { Genero } from "src/modulos/generos/entities/genero.entity";
 import { Usuario } from "src/modulos/usuarios/entities/usuario.entity";
 import { Valoracion } from "src/modulos/valoraciones/entities/valoracion.entity";
-import { Column, Entity, ManyToOne, OneToMany, PrimaryGeneratedColumn } from "typeorm";
+import { BeforeInsert, Column, Entity, ManyToOne, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 @Entity('peliculas')
 
 export class Pelicula {
@@ -18,6 +18,11 @@ export class Pelicula {
         nullable: true
     })
     Descripcion: string;
+
+    @Column('numeric',{
+        nullable: true
+    })
+    Precio: number;
 
     //Relacion
     @ManyToOne(
@@ -45,4 +50,16 @@ export class Pelicula {
     )
 
     cesta?:Cesta[];
+
+    //Disparadores
+    @BeforeInsert()
+    precio_con_Iva(){
+        this.Precio = this.Precio*1.21;
+    }
+
+    @BeforeInsert()
+    MayusTitulo(){
+        this.Titulo = this.Titulo.toUpperCase()
+        
+    }
 }

@@ -1,5 +1,5 @@
 import { Usuario } from "src/modulos/usuarios/entities/usuario.entity";
-import { Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from "typeorm";
+import { BeforeInsert, Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from "typeorm";
 @Entity('perfiles')
 
 export class Perfil {
@@ -33,4 +33,20 @@ export class Perfil {
     )
     @JoinColumn()
     usuario?: Usuario
+
+    //Disparadores 
+    @BeforeInsert()
+    formatoGithub(){
+         if (!this.GitHub.includes('https://github.com/')){
+            this.GitHub = `https://github.com/${this.GitHub}`
+         }
+     }
+    
+    @BeforeInsert()
+    formatoWeb(){
+        if (!this.Web.includes('https://')){
+           this.Web = `https://${this.Web}`
+        }
+    }
+
 }
