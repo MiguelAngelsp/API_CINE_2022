@@ -37,6 +37,7 @@ export class UsuariosService {
       },
       relations: {
           valoraciones: true,
+          cesta: true
       }
     });
   }
