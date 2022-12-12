@@ -19,6 +19,6 @@ export class CreatePeliculaDto {
     @IsString()
     GeneroID?: string;
 
-    // @IsNumber()
-    // ValoracionID: number;
+    @IsString()
+    ValoracionID: string;
 }

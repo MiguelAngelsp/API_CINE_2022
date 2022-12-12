@@ -12,6 +12,9 @@ import { UsuariosModule } from '../usuarios/usuarios.module';
   imports: [
     UsuariosModule,
     TypeOrmModule.forFeature([Valoracion])
+  ],
+  exports: [
+    ValoracionesService
   ]
 })
 export class ValoracionesModule {}
