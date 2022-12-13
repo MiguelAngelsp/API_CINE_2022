@@ -1,8 +1,8 @@
 import { Usuario } from "src/modulos/usuarios/entities/usuario.entity";
 import { BeforeInsert, Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from "typeorm";
-@Entity('perfiles')
+@Entity('users')
 
-export class Perfil {
+export class User {
     @PrimaryGeneratedColumn("uuid")
     ID: string;
 
@@ -11,10 +11,10 @@ export class Perfil {
     })
     Correo: string;
 
-    @Column('text',{
-        nullable: true
+    @Column('text', { 
+        select: false 
     })
-    Contraseña: string;
+    password: string;
 
     @Column('text',{
         unique: true
@@ -29,7 +29,7 @@ export class Perfil {
     //Relacion uno a uno
     @OneToOne(
         () => Usuario,
-        (usuario) => usuario.perfil
+        (usuario) => usuario.user
     )
     @JoinColumn()
     usuario?: Usuario

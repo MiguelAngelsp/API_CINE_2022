@@ -6,7 +6,7 @@ import { AppService } from './app.service';
 import { CestaModule } from './modulos/cesta/cesta.module';
 import { GenerosModule } from './modulos/generos/generos.module';
 import { PeliculasModule } from './modulos/peliculas/peliculas.module';
-import { PerfilModule } from './modulos/perfil/perfil.module';
+import { AuthModule } from './modulos/auth/auth.module';
 import { UsuariosModule } from './modulos/usuarios/usuarios.module';
 import { ValoracionesModule } from './modulos/valoraciones/valoraciones.module';
 
@@ -20,7 +20,7 @@ import { ValoracionesModule } from './modulos/valoraciones/valoraciones.module';
     database: process.env.DB_NAME,
     autoLoadEntities: true,
     synchronize: !!process.env.DB_SYNC
-  }), UsuariosModule, PeliculasModule, ValoracionesModule, GenerosModule, CestaModule, PerfilModule
+  }), UsuariosModule, PeliculasModule, ValoracionesModule, GenerosModule, CestaModule, AuthModule
   ],
   controllers: [AppController],
   providers: [AppService],
