@@ -56,8 +56,8 @@ export class AuthService {
     return `This action returns a #${ID} perfil`;
   }
 
-  update(ID: number, updateAuthDto: UpdateAuthDto) {
-    return `This action updates a #${ID} perfil`;
+  update(id: number, updateAuthDto: UpdateAuthDto) {
+    return this.userRepository.update(id, updateAuthDto);
   }
 
   remove(ID: number) {
