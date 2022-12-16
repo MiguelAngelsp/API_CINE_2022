@@ -1,4 +1,4 @@
-import { Injectable, InternalServerErrorException } from '@nestjs/common';
+import { BadRequestException, Injectable, InternalServerErrorException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { CreateGeneroDto } from './dto/create-genero.dto';
@@ -48,5 +48,25 @@ export class GenerosService {
 
   remove(id: number) {
     return `This action removes a #${id} genero`;
+  }
+
+  async deleteAllClientes(){
+    const query = this.generoRepository.createQueryBuilder('genero');
+    try {
+      return await query
+        .delete()
+        .where({})
+        .execute()
+
+    }catch(error){
+      this.handleDBErrors (error)
+    }
+  }
+
+  private handleDBErrors (error: any): never{
+    if (error.code === '23505')
+      throw new BadRequestException(error.detail)
+
+    throw new InternalServerErrorException('Please Check Server Error ...')
   }
 }

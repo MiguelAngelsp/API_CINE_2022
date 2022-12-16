@@ -48,6 +48,8 @@ export class PeliculasService {
           valoraciones: true,
       }
     });
+
+    
   }
 
   update(id: number, updatePeliculaDto: UpdatePeliculaDto) {
@@ -57,4 +59,6 @@ export class PeliculasService {
   remove(id: number) {
     return `This action removes a #${id} pelicula`;
   }
+
+  
 }

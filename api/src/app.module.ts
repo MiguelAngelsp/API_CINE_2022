@@ -9,6 +9,7 @@ import { PeliculasModule } from './modulos/peliculas/peliculas.module';
 import { AuthModule } from './modulos/auth/auth.module';
 import { UsuariosModule } from './modulos/usuarios/usuarios.module';
 import { ValoracionesModule } from './modulos/valoraciones/valoraciones.module';
+import { SeedModule } from './modulos/seed/seed.module';
 
 @Module({
   imports: [ConfigModule.forRoot(), TypeOrmModule.forRoot({
@@ -20,7 +21,7 @@ import { ValoracionesModule } from './modulos/valoraciones/valoraciones.module';
     database: process.env.DB_NAME,
     autoLoadEntities: true,
     synchronize: !!process.env.DB_SYNC
-  }), UsuariosModule, PeliculasModule, ValoracionesModule, GenerosModule, CestaModule, AuthModule
+  }), UsuariosModule, PeliculasModule, ValoracionesModule, GenerosModule, CestaModule, AuthModule, SeedModule
   ],
   controllers: [AppController],
   providers: [AppService],
