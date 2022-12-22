@@ -1,4 +1,4 @@
-import { Injectable, InternalServerErrorException } from '@nestjs/common';
+import { BadRequestException, Injectable, InternalServerErrorException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { CreateUsuarioDto } from './dto/create-usuario.dto';
@@ -24,20 +24,41 @@ export class UsuariosService {
       console.log(error);
       throw new InternalServerErrorException('Ayuda!')
     }
- 
+
   }
+
+  async deleteAllUsuarios() {
+    const query = this.usuarioRepository.createQueryBuilder('usuario');
+    try {
+      return await query
+        .delete()
+        .where({})
+        .execute()
+
+    } catch (error) {
+      this.handleDBErrors(error)
+    }
+  }
+
+  private handleDBErrors(error: any): never {
+    if (error.code === '23505')
+      throw new BadRequestException(error.detail)
+
+    throw new InternalServerErrorException('Please Check Server Error ...')
+  }
+
   findAll() {
     return this.usuarioRepository.find({});
   }
 
   findOne(ID: string) {
     return this.usuarioRepository.findOne({
-      where: { 
-        ID 
+      where: {
+        ID
       },
       relations: {
-          valoraciones: true,
-          cesta: true
+        valoraciones: true,
+        cesta: true
       }
     });
   }

@@ -1,9 +1,9 @@
 import { Usuario } from "src/modulos/usuarios/entities/usuario.entity";
-import { BeforeInsert, Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from "typeorm";
+import { BeforeInsert, Column, Entity, JoinColumn, OneToOne, PrimaryColumn } from "typeorm";
 @Entity('users')
 
 export class User {
-    @PrimaryGeneratedColumn("uuid")
+    @PrimaryColumn()
     ID: string;
 
     @Column('text',{

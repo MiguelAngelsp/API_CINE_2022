@@ -1,9 +1,9 @@
 import { Pelicula } from "src/modulos/peliculas/entities/pelicula.entity";
-import { BeforeInsert, Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
+import { BeforeInsert, Column, Entity, OneToMany, PrimaryColumn } from "typeorm";
 @Entity('generos')
 
 export class Genero {
-    @PrimaryGeneratedColumn("uuid")
+    @PrimaryColumn()
     ID: string;
 
     @Column('text', {

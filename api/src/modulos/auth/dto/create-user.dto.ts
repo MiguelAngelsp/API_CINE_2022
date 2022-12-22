@@ -3,6 +3,9 @@ import { IsString, Matches, MaxLength, MinLength } from "class-validator";
 export class CreateUserDto {
 
     @IsString()
+    ID: string;
+
+    @IsString()
     UsuarioID: string;
 
     @IsString()

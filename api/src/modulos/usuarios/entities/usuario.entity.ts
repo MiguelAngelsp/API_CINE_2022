@@ -2,12 +2,12 @@ import { Cesta } from "src/modulos/cesta/entities/cesta.entity";
 import { Pelicula } from "src/modulos/peliculas/entities/pelicula.entity";
 import { User } from "src/modulos/auth/entities/user.entity";
 import { Valoracion } from "src/modulos/valoraciones/entities/valoracion.entity";
-import { Column, Entity, ManyToOne, OneToMany, OneToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, ManyToOne, OneToMany, OneToOne, PrimaryColumn } from "typeorm";
 @Entity('usuarios')
 
 export class Usuario {
     
-    @PrimaryGeneratedColumn("uuid")
+    @PrimaryColumn()
     ID: string;
 
     @Column('text',{

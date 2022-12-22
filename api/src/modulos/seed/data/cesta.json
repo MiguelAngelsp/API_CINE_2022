@@ -1,38 +1,32 @@
 [
     {
-        "ID": "100000",
-        "UsuarioID": "",
-        "PeliculaID": "",
+        "UsuarioID": "100",
+        "PeliculaID": "1000",
         "Fecha_compra": "10/10/2022"
     },
     {
-        "ID": "100001",
-        "UsuarioID": "",
-        "PeliculaID": "",
+        "UsuarioID": "101",
+        "PeliculaID": "1001",
         "Fecha_compra": "09/07/2009"
     },
     {
-        "ID": "100002",
-        "UsuarioID": "",
-        "PeliculaID": "",
+        "UsuarioID": "102",
+        "PeliculaID": "1002",
         "Fecha_compra": "04/06/2010"
     },
     {
-        "ID": "100003",
-        "UsuarioID": "",
-        "PeliculaID": "",
+        "UsuarioID": "103",
+        "PeliculaID": "1003",
         "Fecha_compra": "01/01/2018"
     },
     {
-        "ID": "100004",
-        "UsuarioID": "",
-        "PeliculaID": "",
+        "UsuarioID": "104",
+        "PeliculaID": "1004",
         "Fecha_compra": "08/02/2016"
     },
     {
-        "ID": "100005",
-        "UsuarioID": "",
-        "PeliculaID": "",
+        "UsuarioID": "105",
+        "PeliculaID": "1005",
         "Fecha_compra": "01/06/2018"
     }
 ]

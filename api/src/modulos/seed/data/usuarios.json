@@ -1,7 +1,6 @@
 [
     {
         "ID": "100",
-        "PerfilID": "",
         "DNI": "98765678V",
         "Nombre": "Sandra",
         "Apellidos": "Genaro Viñas",
@@ -11,7 +10,6 @@
     },
     {
         "ID": "101",
-        "PerfilID": "",
         "DNI": "78677876K",
         "Nombre": "Pepe",
         "Apellidos": "Nieva Zurano",
@@ -21,7 +19,6 @@
     },
     {
         "ID": "102",
-        "PerfilID": "",
         "DNI": "23987656U",
         "Nombre": "Sofia",
         "Apellidos": "Soria Martin",
@@ -31,7 +28,6 @@
     },
     {
         "ID": "103",
-        "PerfilID": "",
         "DNI": "98653345H",
         "Nombre": "Gines",
         "Apellidos": "Asensio Lopez",
@@ -41,7 +37,6 @@
     },
     {
         "ID": "104",
-        "PerfilID": "",
         "DNI": "99956432F",
         "Nombre": "Luis",
         "Apellidos": "Parra Gales",
@@ -51,7 +46,6 @@
     },
     {
         "ID": "105",
-        "PerfilID": "",
         "DNI": "22564311Q",
         "Nombre": "Antonio",
         "Apellidos": "Valdivieso Rufian",

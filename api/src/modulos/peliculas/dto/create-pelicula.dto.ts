@@ -1,6 +1,9 @@
 import { IsNumber, IsString, MaxLength } from "class-validator";
 
 export class CreatePeliculaDto {
+
+    @IsString()
+    ID: string;
     
     @IsString()
     @MaxLength(60)

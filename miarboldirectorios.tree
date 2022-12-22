@@ -1,0 +1,88 @@
+├── api
+│  ├── .env
+│  ├── .eslintrc.js
+│  ├── .gitignore
+│  ├── .prettierrc
+│  ├── docker-compose.yml
+│  ├── nest-cli.json
+│  ├── package.json
+│  ├── README.md
+│  ├── src
+│  │  ├── app.controller.spec.ts
+│  │  ├── app.controller.ts
+│  │  ├── app.module.ts
+│  │  ├── app.service.ts
+│  │  ├── main.ts
+│  │  └── modulos
+│  │    ├── auth
+│  │    │  ├── auth.controller.ts
+│  │    │  ├── auth.module.ts
+│  │    │  ├── auth.service.ts
+│  │    │  ├── dto
+│  │    │  │  ├── create-user.dto.ts
+│  │    │  │  └── update-auth.dto.ts
+│  │    │  └── entities
+│  │    │    └── user.entity.ts
+│  │    ├── cesta
+│  │    │  ├── cesta.controller.ts
+│  │    │  ├── cesta.module.ts
+│  │    │  ├── cesta.service.ts
+│  │    │  ├── dto
+│  │    │  │  ├── create-cesta.dto.ts
+│  │    │  │  └── update-cesta.dto.ts
+│  │    │  └── entities
+│  │    │    └── cesta.entity.ts
+│  │    ├── generos
+│  │    │  ├── dto
+│  │    │  │  ├── create-genero.dto.ts
+│  │    │  │  └── update-genero.dto.ts
+│  │    │  ├── entities
+│  │    │  │  └── genero.entity.ts
+│  │    │  ├── generos.controller.ts
+│  │    │  ├── generos.module.ts
+│  │    │  └── generos.service.ts
+│  │    ├── peliculas
+│  │    │  ├── dto
+│  │    │  │  ├── create-pelicula.dto.ts
+│  │    │  │  └── update-pelicula.dto.ts
+│  │    │  ├── entities
+│  │    │  │  └── pelicula.entity.ts
+│  │    │  ├── peliculas.controller.ts
+│  │    │  ├── peliculas.module.ts
+│  │    │  └── peliculas.service.ts
+│  │    ├── seed
+│  │    │  ├── data
+│  │    │  │  ├── cesta.json
+│  │    │  │  ├── generos.json
+│  │    │  │  ├── peliculas.json
+│  │    │  │  ├── users.json
+│  │    │  │  ├── usuarios.json
+│  │    │  │  └── valoraciones.json
+│  │    │  ├── seed.controller.ts
+│  │    │  ├── seed.module.ts
+│  │    │  └── seed.service.ts
+│  │    ├── usuarios
+│  │    │  ├── dto
+│  │    │  │  ├── create-usuario.dto.ts
+│  │    │  │  └── update-usuario.dto.ts
+│  │    │  ├── entities
+│  │    │  │  └── usuario.entity.ts
+│  │    │  ├── usuarios.controller.ts
+│  │    │  ├── usuarios.module.ts
+│  │    │  └── usuarios.service.ts
+│  │    └── valoraciones
+│  │      ├── dto
+│  │      │  ├── create-valoracion.dto.ts
+│  │      │  └── update-valoracion.dto.ts
+│  │      ├── entities
+│  │      │  └── valoracion.entity.ts
+│  │      ├── valoraciones.controller.ts
+│  │      ├── valoraciones.module.ts
+│  │      └── valoraciones.service.ts
+│  ├── test
+│  │  ├── app.e2e-spec.ts
+│  │  └── jest-e2e.json
+│  ├── tsconfig.build.json
+│  ├── tsconfig.json
+│  └── yarn.lock
+└── README.md

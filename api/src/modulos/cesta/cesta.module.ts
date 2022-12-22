@@ -12,6 +12,7 @@ import { UsuariosModule } from '../usuarios/usuarios.module';
   imports: [
     PeliculasModule, UsuariosModule,
     TypeOrmModule.forFeature([Cesta])
-  ]
+  ],
+  exports: [CestaService]
 })
 export class CestaModule {}

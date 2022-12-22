@@ -1,20 +1,26 @@
 [
     {
+        "ID": "10",
         "Genero": "Terror"
     },
     {
+        "ID": "11",
         "Genero": "Ciencia Ficcion"
     },
     {
+        "ID": "12",
         "Genero": "Fantasia"
     },
     {
+        "ID": "13",
         "Genero": "Drama"
     },
     {
+        "ID": "14",
         "Genero": "Comedia"
     },
     {
+        "ID": "15",
         "Genero": "Aventuras"
     }
 ]

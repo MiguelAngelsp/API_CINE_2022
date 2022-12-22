@@ -40,6 +40,20 @@ export class AuthService {
     this.handleDBErrors(error)
     }
   }
+
+  async deleteAllUsers() {
+    const query = this.userRepository.createQueryBuilder('user');
+    try {
+      return await query
+        .delete()
+        .where({})
+        .execute()
+
+    } catch (error) {
+      this.handleDBErrors(error)
+    }
+  }
+
   private handleDBErrors (error: any): never{
     if (error.code === '23505')
       throw new BadRequestException(error.detail)

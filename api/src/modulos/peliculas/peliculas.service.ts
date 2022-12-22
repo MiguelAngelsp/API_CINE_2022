@@ -1,4 +1,4 @@
-import { Injectable, InternalServerErrorException } from '@nestjs/common';
+import { BadRequestException, Injectable, InternalServerErrorException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { GenerosService } from '../generos/generos.service';
@@ -20,7 +20,7 @@ export class PeliculasService {
   async create(createProductoDto: CreatePeliculaDto) {
 
     try {
-      const { GeneroID,ValoracionID, ...campos } = createProductoDto;
+      const { GeneroID, ValoracionID, ...campos } = createProductoDto;
       // console.log({...campos});
       const genero = this.generoService.findOne(GeneroID);
       const valoracion = this.valoracionesService.findOne(ValoracionID);
@@ -34,22 +34,44 @@ export class PeliculasService {
       return new InternalServerErrorException('Error en BD')
     }
   }
+
+  async deleteAllPeliculas() {
+    const query = this.peliculaRepository.createQueryBuilder('pelicula');
+    try {
+      return await query
+        .delete()
+        .where({})
+        .execute()
+
+    } catch (error) {
+      this.handleDBErrors(error)
+    }
+  }
+
+  private handleDBErrors(error: any): never {
+    if (error.code === '23505')
+      throw new BadRequestException(error.detail)
+
+    throw new InternalServerErrorException('Please Check Server Error ...')
+  }
+
+
   findAll() {
     return this.peliculaRepository.find({});
   }
 
   findOne(ID: string) {
     return this.peliculaRepository.findOne({
-      where: { 
-        ID 
+      where: {
+        ID
       },
       relations: {
-          cesta: true,
-          valoraciones: true,
+        cesta: true,
+        valoraciones: true,
       }
     });
 
-    
+
   }
 
   update(id: number, updatePeliculaDto: UpdatePeliculaDto) {
@@ -60,5 +82,5 @@ export class PeliculasService {
     return `This action removes a #${id} pelicula`;
   }
 
-  
+
 }
