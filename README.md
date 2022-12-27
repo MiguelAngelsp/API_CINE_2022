@@ -1,9 +1,24 @@
-# PROYECTO INTEGRADO IAW
+
+# 🎞️ PROYECTO INTEGRADO IAW
 
 API-CINE 2022:
 El proyecto surge ante la necesidad del diseño Back-End de una APIREST en NESTJS para la gestión de un servicio de streaming de películas. Se implementa la gestión de un servicio de streaming a través de una API REST en NESTJS y Postman para la construcción, prueba e iteración de la API sobre una base de datos PostgreSQL, almacenada en un contenedor docker.
 
-## ¿En qué nos estamos basando para el desarrollo?
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Tabla de Contenidos**
+
+- [🎞️ PROYECTO INTEGRADO IAW](#-proyecto-integrado-iaw)
+  - [🔍 ¿En qué nos estamos basando para el desarrollo?](#-%C2%BFen-qu%C3%A9-nos-estamos-basando-para-el-desarrollo)
+  - [💻 Instalación](#-instalaci%C3%B3n)
+  - [📫 Postman, la herramienta de desarrollo de nuestro CRUD](#-postman-la-herramienta-de-desarrollo-de-nuestro-crud)
+  - [🐳 Docker, runtime para contenedor con nuestra base de datos PostgreSQL](#-docker-runtime-para-contenedor-con-nuestra-base-de-datos-postgresql)
+  - [📎 Estructuración del proyecto](#-estructuraci%C3%B3n-del-proyecto)
+  - [📚 Documentación del desarrollo](#-documentaci%C3%B3n-del-desarrollo)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
+## 🔍 ¿En qué nos estamos basando para el desarrollo?
 
 - Modelo E-R que define nuestra base de datos:
 ![API_CINE - Database ER diagram (14-12-2022)](https://user-images.githubusercontent.com/114055167/207689060-3f97c60d-4907-447f-84fd-daac1fb2d298.png)
@@ -13,7 +28,7 @@ El proyecto surge ante la necesidad del diseño Back-End de una APIREST en NESTJ
 
 
 
-## ![file_type_nestjs_icon_130355](https://user-images.githubusercontent.com/114055167/209017893-025e2b65-e7f8-4d07-8e82-e5925e1656eb.png) Instalación
+## 💻 Instalación
 
 - Para iniciar la instalación:
   ```bash
@@ -55,13 +70,58 @@ El proyecto surge ante la necesidad del diseño Back-End de una APIREST en NESTJ
   $ yarn start:dev
   ```
 
-##  ✏️ Postman, la herramienta de desarrollo de nuestro CRUD
+##  📫 Postman, la herramienta de desarrollo de nuestro CRUD
+
 
 
 ## 🐳 Docker, runtime para contenedor con nuestra base de datos PostgreSQL
 
+- **Un archivo DockerCompose**, que define y es la orquestación de nuestro contenedor Docker:
+  ```bash
+  version: '3.1'
 
-## Estructuración del proyecto
+  services:
+
+    psql-db:
+      image: postgres:12.1-alpine
+      ports:
+        - ${POSTGRES_PORT_EXTERNAL}:5432
+      environment:
+        - POSTGRES_USER=${DB_USER}
+        - POSTGRES_PASSWORD=${DB_PASS}
+        - POSTGRES_DB=${DB_NAME}
+      volumes:
+        - psql-db-data:/var/lib/postgresql/data
+      networks:
+        - ws-network
+
+  volumes:
+    psql-db-data:
+
+  networks:
+    ws-network:
+  ```
+
+- **App.module**, donde vamos a definir la conexión a nuestra base de datos PostgreSQL del contenedor docker meidante la llamada de variables definidas en un archivo .env:
+  ```bash
+  @Module({
+  imports: [ConfigModule.forRoot(), TypeOrmModule.forRoot({
+    type: 'postgres',
+    host: process.env.DB_HOST,
+    port: parseInt(process.env.DB_PORT),
+    username: process.env.DB_USER,
+    password: process.env.DB_PASS,
+    database: process.env.DB_NAME,
+    autoLoadEntities: true,
+    synchronize: !!process.env.DB_SYNC
+  }), UsuariosModule, PeliculasModule, ValoracionesModule, GenerosModule, CestaModule, AuthModule, SeedModule
+  ],
+  controllers: [AppController],
+  providers: [AppService],
+  })
+  ```
+
+## 📎 Estructuración del proyecto
 ```bash
 ├── api
 │  ├── .env
@@ -153,7 +213,7 @@ El proyecto surge ante la necesidad del diseño Back-End de una APIREST en NESTJ
 └── README.md
 ```
 
-## Documentación del desarrollo
+## 📚 Documentación del desarrollo
 ![1](https://user-images.githubusercontent.com/114055167/208981281-48622890-974b-4678-a1c6-dd5557ddb49e.png)
 ![3](https://user-images.githubusercontent.com/114055167/208981300-4023be4a-f907-4646-8733-5430e818120c.png)
 ![4](https://user-images.githubusercontent.com/114055167/208981306-d0c536d6-8b66-4d9b-9238-b966c1d3bfb3.png)
