@@ -1,0 +1,21 @@
+/* .MuiTypography-root{
+    text-decoration: none !important;
+    background-color: red !important;
+} */
+h1 {
+  color: red
+}
+header {
+  height: 70px;
+  /* background-color: blue; */
+}
+
+main{
+  height: 600px;
+  background-color: azure;
+}
+
+footer {
+  height: 70px;
+  background-color: gray;
+}

@@ -28,7 +28,7 @@ export class GenerosService {
   }
 
   findAll() {
-    return `This action returns all generos`;
+    return this.generoRepository.find({});
   }
 
   findOne(ID: string) {
