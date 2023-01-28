@@ -2,9 +2,8 @@
 
 export interface IAuth {
     ID:        string;
-    UsuarioID: string;
     Correo:    string;
-    password:  string;
-    web:       string;
+    Password:  string;
+    Web:       string;
     GitHub:    string;
 }

@@ -12,10 +12,10 @@ export class UsuariosController {
     return this.usuariosService.create(createUsuarioDto);
   }
 
-  // @Get()
-  // findAll() {
-  //   return this.usuariosService.findAll();
-  // }
+  @Get()
+  findAll() {
+    return this.usuariosService.findAll();
+  }
 
   // @Get(':id')
   // findOne(@Param('id') id: string) {
