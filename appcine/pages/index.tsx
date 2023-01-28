@@ -1,25 +1,15 @@
-import { Button } from "@mui/material";
+import { Button } from "@mui/material"
 import { NextPage } from "next"
-import { MainLayouts } from "../layouts";
-import { useAuth } from '../hooks/useAuth';
-import { AuthList } from '../components/auth/authList';
-import { Mundo } from '../components/Mundo';
- 
-//NextPage --> indica que es un proyecto Next y no Reac
+import { MainLayouts } from "../layouts"
+
 const indexPage: NextPage = () => {
-  const { auth, isLoading } = useAuth ('/auth');
-  const respuesta = useAuth ('/auth');
- console.log(respuesta);
-  console.log(isLoading, "c=", auth);
+  // const { clientes, isLoading } = useClientes ('/clientes');
+  // console.log(isLoading, "c=", clientes);
+
   return (
     <MainLayouts>
-      {
-        (isLoading )
-          ? <AuthList auth={ auth }  /> 
-          : <Mundo />
+      <h2>SECCIÓN HOME - API CINE</h2>
 
-      }
-        
     </MainLayouts>
   )
 }
