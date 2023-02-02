@@ -54,7 +54,11 @@ export class ValoracionesService {
 
 
   findAll() {
-    return this.valoracionRepository.find({});
+    return this.valoracionRepository.find({
+      relations: {
+        usuario: true
+      }
+    });
   }
 
   findOne(ID: string) {

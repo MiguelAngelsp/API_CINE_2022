@@ -59,7 +59,12 @@ export class CestaService {
   }
 
   findAll() {
-    return this.cestaRepository.find({});
+    return this.cestaRepository.find({
+      relations: {
+        usuario: true,
+        peliculas: true,
+      }
+    });
   }
 
   findOne(id: number) {

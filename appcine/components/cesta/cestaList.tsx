@@ -28,9 +28,8 @@ export const CestaList:FC<Props> = ({ cesta }) => {
                             <TableCell component="th" scope="row">
                                 { cesta.ID }
                             </TableCell>
-                            <TableCell align="right">{cesta.ID}</TableCell>
-                            <TableCell align="right">{cesta.UsuarioID}</TableCell>
-                            <TableCell align="right">{cesta.PeliculaID}</TableCell>
+                            <TableCell align="right">{cesta.usuario?.Nombre}</TableCell>
+                            <TableCell align="right">{cesta.peliculas?.Titulo}</TableCell>
                             <TableCell align="right">{cesta.Fecha_compra}</TableCell>
                         </TableRow>
                     )

@@ -17,6 +17,7 @@ export const AuthList:FC<Props> = ({ auth }) => {
                 <TableCell align="right">password</TableCell>
                 <TableCell align="right">Web</TableCell>
                 <TableCell align="right">GitHub</TableCell>
+                <TableCell align="right">Usuario</TableCell>
             </TableRow>
         </TableHead>
 
@@ -33,6 +34,7 @@ export const AuthList:FC<Props> = ({ auth }) => {
                             <TableCell align="right">{auth.Password}</TableCell>
                             <TableCell align="right">{auth.Web}</TableCell>
                             <TableCell align="right">{auth.GitHub}</TableCell>
+                            <TableCell align="right">{auth.usuario?.Nombre}</TableCell>
                         </TableRow>
                     )
                 )}

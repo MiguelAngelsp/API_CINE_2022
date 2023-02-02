@@ -5,7 +5,8 @@
         "GeneroID": "10",
         "Descripcion": "Don Vito Corleone es el respetado y temido jefe de una de las cinco familias de la mafia de Nueva York en los años 40. El hombre tiene cuatro hijos: Connie, Sonny, Fredo y Michael, que no quiere saber nada de los negocios sucios de su padre. Cuando otro capo, Sollozzo, intenta asesinar a Corleone, empieza una cruenta lucha entre los distintos clanes.",
         "ValoracionID": "10000",
-        "Precio": 20
+        "Precio": 20,
+        "Imagen": "https://pulpwall.files.wordpress.com/2015/03/301-el-padrino-portada-facebook-the-godfather1.jpg?w=851&h=315&crop=1"
     },
     {
         "ID": "1001",
@@ -13,7 +14,8 @@
         "GeneroID": "11",
         "Descripcion": "Oskar Schindler, un hombre de enorme astucia y talento organiza un ambicioso plan para ganarse la simpatía de los nazis y a la vez poder rescatar a miles de judíos.",
         "ValoracionID": "10001",
-        "Precio": 40
+        "Precio": 40,
+        "Imagen": "https://compartituras.net/wp-content/uploads/2016/08/partitura-Lista-de-Schindler-1.jpg"
     },
     {
         "ID": "1002",
@@ -21,7 +23,8 @@
         "GeneroID": "12",
         "Descripcion": "Tras la separación de sus padres, Connor tiene que llevar las riendas de su casa ya que su madre está enferma de cáncer. El pequeño intentará superar sus miedos y fobias con la ayuda de un monstruo con el que se encuentra todas las noches. Sus fantasías tendrán que enfrentarse con la realidad y con su fría y calculadora abuela.",
         "ValoracionID": "10002",
-        "Precio": 55
+        "Precio": 55,
+        "Imagen": "http://ep00.epimg.net/tematicos/imagenes/2016/09/26/elpaismas/1474883990_557706_1474884733_noticia_normal.jpg"
     },
     {
         "ID": "1003",
@@ -29,7 +32,8 @@
         "GeneroID": "13",
         "Descripcion": "España. Verano de 1936. El célebre escritor Miguel de Unamuno decide apoyar públicamente la rebelión militar que promete traer orden a la convulsa situación del país. Inmediatamente es destituido por el gobierno republicano como rector de la Universidad de Salamanca.Mientras tanto, el general Franco consigue sumar sus tropas al frente sublevado e inicia una exitosa campaña con la secreta esperanza de hacerse con el mando único de la guerra.",
         "ValoracionID": "10003",
-        "Precio": 15
+        "Precio": 15,
+        "Imagen": "https://www.visitelche.com/wp-content/uploads/2022/02/Cineforum-UNED-MIENTRAS-DURE-LA-GUERRA-Cines-Cinema-Odeon-Elx-Elche.jpg"
     },
     {
         "ID": "1004",
@@ -37,7 +41,8 @@
         "GeneroID": "14",
         "Descripcion": "Walt Kowalski, un veterano de la guerra de Corea, es un obrero jubilado del sector del automóvil que ha enviudado recientemente. Su máxima pasión es cuidar de su más preciado tesoro: un coche Gran Torino de 1972. Es un hombre inflexible y cascarrabias, al que le cuesta trabajo asimilar los cambios que se producen a su alrededor, especialmente la llegada de multitud de inmigrantes asiáticos a su barrio. Sin embargo, las circustancias harán que se vea obligado a replantearse sus ideas.",
         "ValoracionID": "10004",
-        "Precio": 23
+        "Precio": 23,
+        "Imagen": "https://www.magazinema.es/wp-content/uploads/2020/01/grantorino-708x350@2x.jpg"
     },
     {
         "ID": "1005",
@@ -45,6 +50,7 @@
         "GeneroID": "15",
         "Descripcion": "Tanto Gi Taek como su familia están sin trabajo. Cuando su hijo mayor, Gi Woo, empieza a recibir clases particulares en la adinerada casa de Park, las dos familias, que tienen mucho en común pese a pertenecer a dos mundos totalmente distintos, comienzan una relación de resultados imprevisibles.",
         "ValoracionID": "10005",
-        "Precio": 34
+        "Precio": 34,
+        "Imagen": "https://static3.hoy.es/miajadas/multimedia/201912/05/media/parasitospelicula.jpg"
     }
 ]

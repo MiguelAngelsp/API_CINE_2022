@@ -28,7 +28,7 @@ export const ValoracionesList: FC<Props> = ({ valoraciones }) => {
                                 <TableCell component="th" scope="row">
                                     { valoraciones.ID }
                                 </TableCell>
-                                <TableCell align="right">{valoraciones.UsuarioID}</TableCell>
+                                <TableCell align="right">{valoraciones.usuario.Nombre}</TableCell>
                                 <TableCell align="right">{valoraciones.Puntuacion}</TableCell>
                                 <TableCell align="right">{valoraciones.Comentario}</TableCell>
                             </TableRow>

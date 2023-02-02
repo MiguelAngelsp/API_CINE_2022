@@ -63,7 +63,11 @@ export class AuthService {
 
 
   findAll() {
-    return this.userRepository.find({});
+    return this.userRepository.find({
+      relations:{
+        usuario:true
+      }
+    });
   }
 
   findOne(ID: number) {

@@ -24,6 +24,11 @@ export class Pelicula {
     })
     Precio: number;
 
+    @Column('text',{
+        nullable: true
+    })
+    Imagen: string;
+
     //Relacion
     @ManyToOne(
         () => Genero,

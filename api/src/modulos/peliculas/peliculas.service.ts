@@ -57,7 +57,12 @@ export class PeliculasService {
 
 
   findAll() {
-    return this.peliculaRepository.find({});
+    return this.peliculaRepository.find({
+      relations: {
+        genero: true,
+        valoraciones: true,
+      }
+    });
   }
 
   findOne(ID: string) {

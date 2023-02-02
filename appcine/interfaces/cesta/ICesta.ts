@@ -5,4 +5,23 @@ export interface ICesta {
     UsuarioID: string;
     PeliculaID: string;
     Fecha_compra:    string;
+    usuario: IUsuarios
+    peliculas: IPeliculas
+}
+export interface IPeliculas {
+    ID: string;
+    Titulo: string;
+    Descripcion: string;
+    Precio: number;
+    GeneroID: string;
+    ValoracionID: string;
+}
+export interface IUsuarios {
+    ID: string;
+    DNI: string;
+    Nombre: string;
+    Apellidos: string;
+    Direccion: string;
+    Fecha_nacimiento: string;
+    Tarjeta_banco: string;
 }

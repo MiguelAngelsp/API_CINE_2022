@@ -20,6 +20,9 @@ export class CreatePeliculaDto {
     Precio: number;
 
     @IsString()
+    Imagen: string;
+
+    @IsString()
     GeneroID?: string;
 
     @IsString()
