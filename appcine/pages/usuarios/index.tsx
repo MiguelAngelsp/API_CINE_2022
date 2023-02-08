@@ -1,9 +1,9 @@
 import { Button } from "@mui/material";
-import { NextPage } from "next"
-import { MainLayouts } from "../../layouts";
+import { NextPage } from "next";
 import { useUsuarios } from '../../hooks/useUsuarios';
 import { UsuariosList } from '../../components/usuarios/usuariosList';
 import { Mundo } from '../../components/Mundo';
+import { PublicLayouts } from "@/layouts/PublicLayouts";
 
 //NextPage --> indica que es un proyecto Next y no Reac
 const indexPage: NextPage = () => {
@@ -12,7 +12,7 @@ const indexPage: NextPage = () => {
     console.log(respuesta);
     console.log(isLoading, "c=", usuarios);
     return (
-        <MainLayouts>
+        <PublicLayouts>
             <h2>Sección Usuarios</h2>
             {
                 (isLoading)
@@ -21,7 +21,7 @@ const indexPage: NextPage = () => {
 
             }
 
-        </MainLayouts>
+        </PublicLayouts>
     )
 }
 

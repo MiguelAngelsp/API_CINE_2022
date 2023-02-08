@@ -1,9 +1,9 @@
 import { Button } from "@mui/material";
 import { NextPage } from "next"
-import { useAuth } from '../../hooks/useAuth';
-import { AuthList } from '../../components/auth/authList';
-import { Mundo } from '../../components/Mundo';
-import { PublicLayouts } from "@/layouts/PublicLayouts";
+import { useAuth } from "@/hooks/useAuth";
+import { AuthList } from "@/components/auth/authList";
+import { Mundo } from "@/components";
+import { MainLayouts } from "@/layouts/MainLayouts";
 
 //NextPage --> indica que es un proyecto Next y no Reac
 const indexPage: NextPage = () => {
@@ -12,7 +12,7 @@ const indexPage: NextPage = () => {
     console.log(respuesta);
     console.log(isLoading, "c=", auth);
     return (
-        <PublicLayouts>
+        <MainLayouts>
             <h2>Sección Auth</h2>
             {
                 (isLoading)
@@ -21,7 +21,7 @@ const indexPage: NextPage = () => {
 
             }
 
-        </PublicLayouts>
+        </MainLayouts>
     )
 }
 

@@ -48,7 +48,9 @@ export class UsuariosService {
   }
 
   findAll() {
-    return this.usuarioRepository.find({});
+    return this.usuarioRepository.find({
+      
+    });
   }
 
   findOne(ID: string) {

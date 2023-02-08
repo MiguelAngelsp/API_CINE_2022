@@ -1,25 +1,17 @@
 import { AppBar, Box, Button, IconButton, Link, Toolbar, Typography } from "@mui/material"
 import MenuIcon from '@mui/icons-material/Menu';
 import NextLink from 'next/link';
+import Image from "next/image";
 
 export const NavBar = () => {
     return (
-        <AppBar>
+        <AppBar sx={{ backgroundColor: 'Blue' }}>
             <Toolbar>
-                <IconButton
-                    size="large"
-                    edge="start"
-                    aria-label="menu"
-                    color="inherit"
-                    sx={{}}
-                >
-                    <MenuIcon />
-                </IconButton>
-                <Typography variant="h6" component="h3" sx={{}}>
-                    <Link href='/' passHref component={NextLink}>
-                        <Button sx={{ color: 'white' }}>Home</Button>
-                    </Link>
-                </Typography>
+                <Image src="/apinetflix.PNG" width={64} height={48} alt="logo" />
+
+                <Link href='/' passHref component={NextLink}>
+                    <Button sx={{ color: 'white' }}>Home</Button>
+                </Link>
                 <Box flex={1} />
 
                 <Box component="nav"
@@ -45,9 +37,19 @@ export const NavBar = () => {
                     </Link>
                 </Box>
                 <Box flex={1} />
-                <Box>
-                    Registro
-                </Box>
+                <Link href='/auth/login' passHref component={NextLink}>
+                    <Button sx={{ color: 'white' }}>Login</Button>
+                </Link>
+                <Box flex={1} />
+                <IconButton
+                    size="large"
+                    edge="start"
+                    aria-label="menu"
+                    color="inherit"
+                    sx={{}}
+                >
+                    <MenuIcon />
+                </IconButton>
             </Toolbar>
         </AppBar>
     )
