@@ -29,27 +29,27 @@
     {
         "ID": "1003",
         "Titulo": "Mientras dure la guerra",
-        "GeneroID": "13",
+        "GeneroID": "14",
         "Descripcion": "España. Verano de 1936. El célebre escritor Miguel de Unamuno decide apoyar públicamente la rebelión militar que promete traer orden a la convulsa situación del país. Inmediatamente es destituido por el gobierno republicano como rector de la Universidad de Salamanca.Mientras tanto, el general Franco consigue sumar sus tropas al frente sublevado e inicia una exitosa campaña con la secreta esperanza de hacerse con el mando único de la guerra.",
-        "ValoracionID": "10003",
+        "ValoracionID": "10004",
         "Precio": 15,
         "Imagen": "https://www.visitelche.com/wp-content/uploads/2022/02/Cineforum-UNED-MIENTRAS-DURE-LA-GUERRA-Cines-Cinema-Odeon-Elx-Elche.jpg"
     },
     {
         "ID": "1004",
         "Titulo": "Gran Torino",
-        "GeneroID": "14",
+        "GeneroID": "15",
         "Descripcion": "Walt Kowalski, un veterano de la guerra de Corea, es un obrero jubilado del sector del automóvil que ha enviudado recientemente. Su máxima pasión es cuidar de su más preciado tesoro: un coche Gran Torino de 1972. Es un hombre inflexible y cascarrabias, al que le cuesta trabajo asimilar los cambios que se producen a su alrededor, especialmente la llegada de multitud de inmigrantes asiáticos a su barrio. Sin embargo, las circustancias harán que se vea obligado a replantearse sus ideas.",
-        "ValoracionID": "10004",
+        "ValoracionID": "10005",
         "Precio": 23,
         "Imagen": "https://www.magazinema.es/wp-content/uploads/2020/01/grantorino-708x350@2x.jpg"
     },
     {
         "ID": "1005",
         "Titulo": "Parásitos",
-        "GeneroID": "15",
+        "GeneroID": "13",
         "Descripcion": "Tanto Gi Taek como su familia están sin trabajo. Cuando su hijo mayor, Gi Woo, empieza a recibir clases particulares en la adinerada casa de Park, las dos familias, que tienen mucho en común pese a pertenecer a dos mundos totalmente distintos, comienzan una relación de resultados imprevisibles.",
-        "ValoracionID": "10005",
+        "ValoracionID": "10003",
         "Precio": 34,
         "Imagen": "https://static3.hoy.es/miajadas/multimedia/201912/05/media/parasitospelicula.jpg"
     }

@@ -16,8 +16,7 @@ export const PeliculasList:FC<Props> = ({ peliculas }) => {
                 <TableCell align="right">Titulo</TableCell>
                 <TableCell align="right">Descripción</TableCell>
                 <TableCell align="right">Precio</TableCell>
-                <TableCell align="right">GeneroID</TableCell>
-                <TableCell align="right">ValoracionID</TableCell>
+                <TableCell align="right">Genero</TableCell>
             </TableRow>
         </TableHead>
 
@@ -33,8 +32,7 @@ export const PeliculasList:FC<Props> = ({ peliculas }) => {
                             <TableCell align="right">{peliculas.Titulo}</TableCell>
                             <TableCell align="right">{peliculas.Descripcion}</TableCell>
                             <TableCell align="right">{peliculas.Precio}</TableCell>
-                            <TableCell align="right">{peliculas.GeneroID}</TableCell>
-                            <TableCell align="right">{peliculas.ValoracionID}</TableCell>
+                            <TableCell align="right">{peliculas.genero.Genero}</TableCell>
                         </TableRow>
                     )
                 )}
