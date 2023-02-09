@@ -16,7 +16,7 @@ export const NavBar = () => {
             >
                 <MenuIcon />
             </IconButton>
-            <Link href='/' passHref component={ NextLink }>
+            <Link href='/admin' passHref component={ NextLink }>
                     <Button sx={{ color: 'white'}}>Home</Button>
             </Link>
             <Box flex={1} />
