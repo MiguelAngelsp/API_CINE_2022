@@ -1,1 +1,1 @@
-export * from './IPeliculas'
+export * from './IPelicula'

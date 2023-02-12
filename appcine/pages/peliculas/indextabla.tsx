@@ -10,10 +10,10 @@ const IndexPeliculasPage = () => {
   return (
     <MainLayouts>
       <h2>Sección de Peliculas</h2>
-      <PeliculasList peliculas = {peliculas} />
+      <PeliculasList pelicula = {peliculas} />
             {
                 (isLoading)
-                    ? <PeliculasList peliculas = {peliculas} />
+                    ? <PeliculasList pelicula = {peliculas} />
                     : <Mundo />
             }
         </MainLayouts>

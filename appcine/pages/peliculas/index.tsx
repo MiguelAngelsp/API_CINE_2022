@@ -1,28 +1,18 @@
-import { Button } from "@mui/material";
-import { NextPage } from "next";
-import { usePeliculas } from '../../hooks/usePeliculas';
-import { PeliculasCardList } from '../../components/peliculas/peliculasCardList';
-import { Mundo } from '../../components/Mundo';
-import { PublicLayouts } from "@/layouts/PublicLayouts";
+import { PeliculasCardList } from '@/components/peliculas';
+import { usePeliculas } from '@/hooks/usePeliculas';
+import { PublicLayouts } from '../../layouts/PublicLayouts';
 
-//NextPage --> indica que es un proyecto Next y no Reac
-const indexPage: NextPage = () => {
-    const { peliculas, isLoading } = usePeliculas('/peliculas');
-    const respuesta = usePeliculas('/peliculas');
-    console.log(respuesta);
-    console.log(isLoading, "c=", peliculas);
-    return (
-        <PublicLayouts>
-            <h2>Sección Películas</h2>
-            {
-                (isLoading)
-                    ? <PeliculasCardList peliculas={peliculas} />
-                    : <Mundo />
 
-            }
+const IndexPeliculasPage = () => {
+  const { peliculas, isLoading } = usePeliculas('/peliculas');
+  console.log("l=", isLoading, "c=", peliculas);
 
-        </PublicLayouts>
-    )
+  return (
+    <PublicLayouts>
+      <h2>Sección de Peliculas</h2>
+      <PeliculasCardList peliculas = {peliculas} />
+    </PublicLayouts>
+  )
 }
 
-export default indexPage
+export default IndexPeliculasPage;
