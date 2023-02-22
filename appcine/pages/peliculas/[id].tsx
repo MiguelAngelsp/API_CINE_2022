@@ -1,24 +1,26 @@
+import { usePeliculas } from "@/hooks/usePeliculas";
 import { PublicLayouts } from "@/layouts/PublicLayouts";
 import { useRouter } from "next/router";
 import { FC } from "react"
-
-
-
+import { IPelicula } from "@/interfaces/peliculas";
+import { PeliculasDetails } from "@/components/peliculas/PeliculasDetails";
 
 interface Props {
     ID: string
 }
 
-const DetallePage = () => {
+const PeliculaPage = () => {
     const router = useRouter();
-    const ID = router.query;
-    console.log(ID)
+    console.log(router)
+    const ID = router.query
+    const { peliculas:pelicula, isLoading} = usePeliculas(`/peliculas/${ ID.id}`);
   return (
     <PublicLayouts>
-        <h2>Detalle de la película { ID.id}</h2>
+        <h2>Detalle de la película {`${router.query.id}`}</h2>
+        <PeliculasDetails pelicula={pelicula}/>
     </PublicLayouts>
     
   )
 }
 
-export default DetallePage
+export default PeliculaPage
