@@ -28,4 +28,8 @@ export class CreateUserDto {
     @IsString()
     @MaxLength(30)
     GitHub: string;
+
+    @IsString()
+    @MinLength(1)
+    fullName:string;
 }

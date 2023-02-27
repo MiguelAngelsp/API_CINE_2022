@@ -11,6 +11,9 @@ export class User {
     })
     Correo: string;
 
+    @Column()
+    fullName: string;
+
     @Column('text', { 
         select: false 
     })
@@ -48,5 +51,15 @@ export class User {
            this.Web = `https://${this.Web}`
         }
     }
+
+    @Column('text', {
+        array: true,
+        default: ['user']
+    })
+    roles: string[];
+
+    @Column('bool', { default: true })
+    isActive: boolean;
+
 
 }

@@ -5,7 +5,8 @@
         "Correo": "sandra@apicine.com",
         "password": "32KRJKsdlakkl1",
         "Web": "sandra-apicine.com/",
-        "GitHub": "sandra-apicine"
+        "GitHub": "sandra-apicine",
+        "fullName": "Sandra Andorra"
     },
     {
         "ID": "1000001",
@@ -13,7 +14,8 @@
         "Correo": "pepe@apicine.com",
         "password": "FDSF3424dfs3",
         "Web": "pepe-apicine.com/",
-        "GitHub": "pepe-apicine"
+        "GitHub": "pepe-apicine",
+        "fullName": "Pepe Fonetica"
     },
     {
         "ID": "1000002",
@@ -21,7 +23,8 @@
         "Correo": "sofia@apicine.com",
         "password": "HRTHDddsf324",
         "Web": "sofia-apicine.com/",
-        "GitHub": "sofia-apicine"
+        "GitHub": "sofia-apicine",
+        "fullName": "Sofia Tardem"
     },
     {
         "ID": "1000003",
@@ -29,7 +32,8 @@
         "Correo": "gines@apicine.com",
         "password": "213ADqweq",
         "Web": "gines-apicine.com/",
-        "GitHub": "gines-apicine"
+        "GitHub": "gines-apicine",
+        "fullName": "Gines Asensio"
     },
     {
         "ID": "1000004",
@@ -37,7 +41,8 @@
         "Correo": "luis@apicine.com",
         "password": "DAJD12ksada",
         "Web": "luis-apicine.com/",
-        "GitHub": "luis-apicine"
+        "GitHub": "luis-apicine",
+        "fullName": "Luis Perez"
     },
     {
         "ID": "1000005",
@@ -45,6 +50,7 @@
         "Correo": "antonio@apicine.com",
         "password": "dsadDSAD1223",
         "Web": "antonio-apicine.com/",
-        "GitHub": "antonio-apicine"
+        "GitHub": "antonio-apicine",
+        "fullName": "Antonio Quesada"
     }
 ]
