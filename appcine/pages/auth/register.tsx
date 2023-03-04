@@ -7,19 +7,21 @@ import { AuthLayout } from '../../layouts';
 import { validations } from '../../utils';
 import { useRouter } from 'next/router';
 import { AuthContext } from '../../context/auth/AuthContext';
-
+import CineApi from '../../api/CineApi';
 interface IRespuestaRegister {
+    ID: string;
     token: string;
-    email: string;
+    Correo: string;
     password: string;
     fullName: string;
     isActive: boolean;
     roles: String[]
 }
 type UserData = {
-    email: string,
+    Correo: string,
     password: string,
-    fullName: string
+    fullName: string,
+    ID: string
 };
 const RegisterPage = () => {
   const router = useRouter();
@@ -30,8 +32,9 @@ const RegisterPage = () => {
   
   const onRegisterUser = async ( InputData: UserData ) => {
     setShowError(false);
-    const { email, password, fullName } = InputData;
-    const {hasError, message } = await registerUser(email, password, fullName)
+    const { Correo, password, fullName } = InputData;
+    const {hasError, message } = await registerUser(Correo, password, fullName )
+    console.log(message);
     if (hasError){
         setShowError(true);
         setErrorMessage(message || '');
@@ -69,12 +72,12 @@ const RegisterPage = () => {
                 </Grid>
                 <Grid item xs={12}>
                     <TextField 
-                        { ...register('email', {
-                            required: 'Email obligatorio',
+                        { ...register('Correo', {
+                            required: 'Correo obligatorio',
                             validate: validations.isEmail
                         })}
-                        error= { !!errors.email}
-                        helperText = { errors.email?.message }
+                        error= { !!errors.Correo}
+                        helperText = { errors.Correo?.message }
                         label="Correo" variant='filled' fullWidth />
                 </Grid>
                 <Grid item xs={12}>

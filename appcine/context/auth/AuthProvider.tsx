@@ -5,39 +5,46 @@ import axios from 'axios';
 import { IRespuestaApiAuth } from './interfaces/IRespuestaAuthApi';
 import CineApi from '@/api/CineApi';
 import { IAuth } from '@/interfaces/auth/IAuth';
+import { IUser } from '@/interfaces/users/IUser';
+import { IUsuarios } from '@/interfaces/usuarios';
+
 
 export interface AuthState{
     isLoggedIn: boolean;
-    user?: IAuth;
+    usuario?: IAuth;
 }
 const AUTH_INITIAL_STATE: AuthState = {
     isLoggedIn: false,
-    user: undefined
+    usuario: undefined
 }
 
-export const AuthProvider:FC = ({ children }) => {
+interface Props{
+    children: any
+}
+
+export const AuthProvider:FC<({ children: any })> = ({children}) => {
     const [ state, dispatch ] = useReducer( authReducer, AUTH_INITIAL_STATE );
-    const loginUser = async (email: string, password: string):Promise<boolean> => {
+    const loginUser = async (Correo: string, password: string):Promise<boolean> => {
         try {
-            const { data } = await CineApi.post('/auth/login', { email, password });
+            const { data } = await CineApi.post('/auth/login', { Correo, password });
             console.log(data);
-            const { token, user } = data;
-            console.log(user);
+            const { token, usuario } = data;
+            console.log(usuario);
             Cookies.set('token', token);
-            dispatch({ type: '[Auth] - Login', payload: user });
+            dispatch({ type: '[Auth] - Login', payload: usuario });
             return true;
         } catch (error) { //credenciales falsas
             return false;
         }
     } 
 
-    const registerUser = async (email: string, password: string, fullName: string ):Promise<IRespuestaApiAuth>=> {
+    const registerUser = async (Correo: string, password: string, fullName: string, ID: string ):Promise<IRespuestaApiAuth>=> {
         try {
-            const { data } = await CineApi.post ('/auth/rgister', { email, fullName, password })
-            const { token, user } = data;
+            const { data } = await CineApi.post ('/auth/register', { Correo, fullName, password, ID })
+            const { token, usuario } = data;
             Cookies.set('token', token);
             //mando a llamar al login pq ya se autenticó
-            dispatch({ type: '[Auth] - Login', payload: user });
+            dispatch({ type: '[Auth] - Login', payload: usuario });
             return {
                 hasError: false,
                 message: 'Usuario creado con éxito'

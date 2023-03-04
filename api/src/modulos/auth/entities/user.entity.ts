@@ -1,9 +1,9 @@
 import { Usuario } from "src/modulos/usuarios/entities/usuario.entity";
-import { BeforeInsert, Column, Entity, JoinColumn, OneToOne, PrimaryColumn } from "typeorm";
+import { BeforeInsert, Column, Entity, JoinColumn, OneToOne, PrimaryColumn, PrimaryGeneratedColumn } from "typeorm";
 @Entity('users')
 
 export class User {
-    @PrimaryColumn()
+    @PrimaryGeneratedColumn("uuid")
     ID: string;
 
     @Column('text',{
@@ -20,14 +20,15 @@ export class User {
     password: string;
 
     @Column('text',{
-        unique: true
+        default: ['Web']
+
     })
-    Web: string;
+    Web?: string;
 
     @Column('text',{
-        unique: true
+        default: ['GitHub']
     })
-    GitHub: string;
+    GitHub?: string;
 
     //Relacion uno a uno
     @OneToOne(
@@ -38,19 +39,19 @@ export class User {
     usuario?: Usuario
 
     //Disparadores 
-    @BeforeInsert()
-    formatoGithub(){
-         if (!this.GitHub.includes('https://github.com/')){
-            this.GitHub = `https://github.com/${this.GitHub}`
-         }
-     }
+    // @BeforeInsert()
+    // formatoGithub(){
+    //      if (!this.GitHub.includes('https://github.com/')){
+    //         this.GitHub = `https://github.com/${this.GitHub}`
+    //      }
+    //  }
     
-    @BeforeInsert()
-    formatoWeb(){
-        if (!this.Web.includes('https://')){
-           this.Web = `https://${this.Web}`
-        }
-    }
+    // @BeforeInsert()
+    // formatoWeb(){
+    //     if (!this.Web.includes('https://')){
+    //        this.Web = `https://${this.Web}`
+    //     }
+    // }
 
     @Column('text', {
         array: true,

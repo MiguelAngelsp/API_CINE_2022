@@ -4,8 +4,12 @@ export interface IAuth {
     Correo:    string;
     Password:  string;
     Web:       string;
+    isActive?: boolean;
+    token?:    string;
+    roles?:    string;
     GitHub:    string;
-    usuario: IUsuarios
+    fullName:  string;
+    usuario:   IUsuarios
 }
 
 export interface IUsuarios {

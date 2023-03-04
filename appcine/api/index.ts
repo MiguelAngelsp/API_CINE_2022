@@ -1,1 +1,1 @@
-export { default as libreriaApi } from './CineApi';
+export { default as CineApi } from './CineApi';

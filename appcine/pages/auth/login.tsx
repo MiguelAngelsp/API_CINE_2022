@@ -9,11 +9,11 @@ import { AuthLayout } from '../../layouts';
 import { validations } from '../../utils';
 interface IRespuestaLogin {
     token: string;
-    email: string;
+    Correo: string;
     password: string;
 }
 type FormData = {
-    email: string,
+    Correo: string,
     password: string,
 };
 const LoginPage = () => { 
@@ -22,9 +22,9 @@ const LoginPage = () => {
     const { register, handleSubmit, formState: { errors } } = useForm<FormData>();
     const [ showError, setShowError ] = useState(false);
 
-    const onLoginUser = async ({email, password}: FormData ) => {
+    const onLoginUser = async ({Correo, password}: FormData ) => {
         setShowError(false);
-        const isValidLogin = await loginUser(email, password);
+        const isValidLogin = await loginUser(Correo, password);
 
         if (!isValidLogin){
             setShowError(true);
@@ -52,13 +52,13 @@ const LoginPage = () => {
                         </Grid>
                         <Grid item xs={12}>
                             <TextField 
-                                { ...register('email', {
+                                { ...register('Correo', {
                                     required: 'email es obligatorio',
                                     validate: (val) => validations.isEmail(val)
                                     // validate: validations.isEmail
                                 })}
-                                error={!!errors.email}
-                                helperText={errors.email?.message}
+                                error={!!errors.Correo}
+                                helperText={errors.Correo?.message}
                                 type="email" label="Correo" variant='filled' fullWidth />
                         </Grid>
                         <Grid item xs={12}>
