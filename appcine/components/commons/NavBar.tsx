@@ -8,7 +8,7 @@ import { AuthContext } from "@/context/auth/AuthContext";
 export const NavBar = () => {
     const { user } =  useContext(AuthContext); 
     return (
-        <AppBar sx={{ backgroundColor: 'Blue' }}>
+        <AppBar sx={{ backgroundColor: 'Brown' }}>
             <Toolbar>
                 <Image src="/apinetflix.PNG" width={64} height={48} alt="logo" />
 

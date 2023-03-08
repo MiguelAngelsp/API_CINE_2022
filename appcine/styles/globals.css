@@ -1,5 +1,5 @@
 h1 {
-  color: red
+  color: rgb(0, 0, 0)
 }
 header {
   height: 70px;
@@ -8,10 +8,10 @@ header {
 
 main{
   height: auto;
-  background-color: azure;
+  background-color: rgb(244, 220, 85);
 }
 
 footer {
   height: 70px;
-  background-color: gray;
+  background-color: rgb(126, 35, 35);
 }

@@ -17,13 +17,13 @@ export const AuthLayout:FC<Props> = ({ children, title }) => {
         </Head>
         <header>
         <Box component="nav" 
-                 sx= {{ padding:'10', backgroundColor:'orange', alignItems:'center',  display: { xs: 'none', sm: 'flex' }}} >
+                 sx= {{ padding:'10', backgroundColor:'Brown', alignItems:'center',  display: { xs: 'none', sm: 'flex' }}} >
                 <Image src="/apinetflix.png" width={80} height={60}  alt="logo" />
                 <Box flex={2} />  
                     <Typography fontWeight={700}>Zona de Autenticación</Typography> 
                 <Box flex={2} />   
                 <Link href='/auth/register' passHref component={ NextLink }>
-                    <Button sx={{ color: 'white'}}>Registro</Button>
+                    <Button sx={{ color: 'Black'}}>Registro</Button>
                 </Link>
                 <Box flex={1} />   
         </Box>
