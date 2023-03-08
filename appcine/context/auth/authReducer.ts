@@ -1,6 +1,7 @@
 
-import { IAuth } from "@/interfaces/auth/IAuth";
+
 import { AuthState } from "./";
+import { IAuth } from "./interfaces/IRespuestaAuthApi";
 
 type AuthActionType =
 | { type: '[Auth] - Login', payload: IAuth }

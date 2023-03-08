@@ -1,12 +1,13 @@
 import { Box, Button, Grid, Typography } from '@mui/material';
 import Image from 'next/image';
-import React, { FC } from 'react'
+import React, { FC, useContext } from 'react'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import Tab from '@mui/material/Tab';
 import TabContext from '@mui/lab/TabContext';
 import TabList from '@mui/lab/TabList';
 import { TabPanel } from '@mui/lab';
 import { IPelicula } from '@/interfaces/peliculas/IPelicula';
+import { AuthContext } from '../../context';
 
 interface Props {
     pelicula: IPelicula
@@ -22,6 +23,7 @@ export const PeliculasDetails:FC<Props> = ({pelicula}) => {
     const handleChange = (event: React.SyntheticEvent, newValue: string) => {
       setValue(newValue);
     };
+    const { user } =  useContext(AuthContext); 
     
   return (
     <Grid container spacing={3}>
@@ -41,6 +43,7 @@ export const PeliculasDetails:FC<Props> = ({pelicula}) => {
             <Box display='flex' flexDirection='row' >
               {/* <Typography sx={{width: '40%'}}  variant='subtitle1' > Identificador: </Typography> */}
               <Typography sx={{width: '60%'}}> Identificador: {pelicula.ID} </Typography>
+              { user?.Correo}            
             </Box>
             {/* <Box display='flex' flexDirection='row'>
               <Typography sx={{width: '40%'}}  variant='subtitle1' > Titulo </Typography>
