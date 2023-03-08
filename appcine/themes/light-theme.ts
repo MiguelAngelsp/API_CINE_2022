@@ -160,7 +160,7 @@
 
 
 
-import { createTheme } from '@mui/material/styles';
+import { createTheme, TypeBackground } from '@mui/material/styles';
 
 // export const lightTheme = createTheme({
 //   palette: {
@@ -250,6 +250,9 @@ import { createTheme } from '@mui/material/styles';
 //   },
 // });
 
+interface CustomTypeBackground extends TypeBackground {
+  backgroundImage?: string;
+}
 
 export const lightTheme = createTheme({
   palette: {
@@ -260,8 +263,9 @@ export const lightTheme = createTheme({
       main: '#fff',
     },
     background: {
-      default: '#141414',
-      paper: '#fff',
+      // default: '#009',
+      default: 'url(\fondoNetflix.jpg)',
+//       paper: '#141414',
     },
   },
   typography: {
@@ -318,12 +322,14 @@ export const lightTheme = createTheme({
       lineHeight: 1.5,
     },
     body1: {
+      default: 'url("/public/fondoNetflix.jpg")',
       fontSize: '1rem',
       fontWeight: 400,
       letterSpacing: '0.00938em',
       lineHeight: 1.5,
     },
     body2: {
+      default: 'url("/public/fondoNetflix.jpg")',
       fontSize: '0.875rem',
       fontWeight: 400,
       letterSpacing: '0.01071em',
@@ -338,6 +344,14 @@ export const lightTheme = createTheme({
     },
   },
   components: {
+    MuiCssBaseline: {
+      styleOverrides: `
+        body {
+          background-image: url('/netfli11.gif');
+          background-size: cover;
+        }
+      `,
+    },
     MuiButton: {
       styleOverrides: {
         root: {
@@ -363,4 +377,7 @@ export const lightTheme = createTheme({
       },
     },
   },
+  
 });
+
+

@@ -10,18 +10,23 @@ export default function App({ Component, pageProps }: AppProps) {
     <SWRConfig
       value={{
         // refreshInterval: 500,
-        fetcher: (resource, init ) => 
-          fetch(resource, init ).then( res => res.json ())
+        fetcher: (resource, init) =>
+          fetch(resource, init).then(res => res.json())
       }}
     >
       <AuthProvider>
-        <ThemeProvider theme={ lightTheme } >
+        <ThemeProvider theme={lightTheme} >
           <CssBaseline />
           <Component {...pageProps} />
         </ThemeProvider>
+        {/* <ThemeProvider theme={computerTheme}>
+          <Component {...pageProps} />
+        </ThemeProvider> */}
       </AuthProvider>
-        
+
     </SWRConfig>
-    
+
   )
 }
+
+

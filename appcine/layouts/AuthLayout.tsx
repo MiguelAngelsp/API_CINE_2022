@@ -4,7 +4,6 @@ import { FC } from "react"
 import NextLink from 'next/link';
 import Image from "next/image";
 
-
 interface Props {
     title: string;
     children?: any

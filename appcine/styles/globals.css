@@ -8,10 +8,14 @@ header {
 
 main{
   height: auto;
-  background-color: rgb(244, 220, 85);
+  background-image: url('/public/fondoNetflix.jpg');
+  background-size: cover;
+  /* background-color: rgb(244, 220, 85); */
+  color: rgb(0, 0, 0)
 }
 
 footer {
   height: 70px;
   background-color: rgb(126, 35, 35);
 }
+
