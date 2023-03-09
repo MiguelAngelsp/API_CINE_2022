@@ -8,8 +8,8 @@ const indexPage: NextPage = () => {
   return (
     <PublicLayouts>
       <h2>SECCIÓN HOME - API CINE</h2>
-      <img src="https://user-images.githubusercontent.com/114055167/207689060-3f97c60d-4907-447f-84fd-daac1fb2d298.png" width="900"
-     height="700"></img>
+      <img src="https://assets-global.website-files.com/60a75d8226f3295ecacf9e33/63ee03748ecbcb5c2b076a24_collage_live%20awards%20on%20Astro%202023.jpg" width="1400"
+     height="545"></img>
     </PublicLayouts>
   )
 }
