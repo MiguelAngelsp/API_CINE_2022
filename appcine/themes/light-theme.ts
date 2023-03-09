@@ -347,7 +347,7 @@ export const lightTheme = createTheme({
     MuiCssBaseline: {
       styleOverrides: `
         body {
-          background-image: url('/netfli11.gif');
+          background-image: url('/netfli26.png');
           background-size: cover;
         }
       `,

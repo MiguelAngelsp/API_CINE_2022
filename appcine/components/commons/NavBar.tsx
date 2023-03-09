@@ -10,7 +10,7 @@ export const NavBar = () => {
     return (
         <AppBar sx={{ backgroundColor: 'Brown' }}>
             <Toolbar>
-                <Image src="/apinetflix.PNG" width={64} height={48} alt="logo" />
+                <Image src="/apinetflix.PNG" width={150} height={68} alt="logo" />
 
                 <Link href='/' passHref component={NextLink}>
                     <Button sx={{ color: 'white' }}>Home</Button>
