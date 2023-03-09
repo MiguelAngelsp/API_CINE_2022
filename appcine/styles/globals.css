@@ -19,3 +19,10 @@ footer {
   background-color: rgb(126, 35, 35);
 }
 
+.register-page {
+  background-color: rgb(126, 35, 35);
+  /* background-image: url(/rojo.jpg); */
+  background-size: cover;
+  background-position: center;
+}
+
