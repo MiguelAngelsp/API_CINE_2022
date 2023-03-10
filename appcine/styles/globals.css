@@ -33,7 +33,7 @@ footer {
 
 .grid-background {
   /* background-color: rgb(126, 35, 35); */
-  background-image: 'url("/public/detalle.jpg")';
+  background-image: url(/detalle.png);
   background-size: cover;
 }
 

@@ -6,7 +6,7 @@ import Image from "next/image";
 
 export const NavBar = () => {
     return (
-        <AppBar sx={{backgroundColor: 'blue'}}>
+        <AppBar sx={{backgroundColor: '#1E1F8C'}}>
             <Toolbar>
                 <IconButton
                     size="large"
@@ -98,3 +98,4 @@ export const NavBar = () => {
     )
 
 }
+
