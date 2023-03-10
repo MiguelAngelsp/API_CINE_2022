@@ -8,15 +8,15 @@ interface Props {
 }
 export const PeliculasCard:FC<Props> = ({ pelicula }) => {
   return (
-    <Grid item xs= {6} sm={3}>
-        <Card sx={{ width: '90%' }}>
+    <Grid item xs= {6} sm={3} >
+        <Card sx={{ width: '90%', backgroundColor: '#5DADE2', backgroundSize: 'cover' }} className='card-background'>
           <Link href={`/peliculas/${pelicula.ID}`}  passHref component={NextLink} prefetch={false}>
             <CardActionArea>
-                <Box display='flex' alignItems='flex-start' flexDirection='row'>
+                <Box display='flex' alignItems='flex-start' flexDirection='row' >
                     <CardMedia
                         component='img' className='fadeIn'
                         image={ pelicula.Imagen } alt={ pelicula.Titulo } 
-                        sx={{ width:'120px' }}
+                        sx={{ width: '120px', height: '160px', objectFit: 'cover' }}
                     />
                     <Box sx={{marginLeft: 3}}>
                         <Typography fontWeight={1000}>Titulo:</Typography> 
@@ -28,11 +28,11 @@ export const PeliculasCard:FC<Props> = ({ pelicula }) => {
             </CardActionArea>
           </Link>
         </Card>
-        <Box sx= {{ marginTop: 1}} className='fadeIn'>
+        {/* <Box sx= {{ marginTop: 1, backgroundColor: '#5DADE2', backgroundSize: 'cover'}} className='fadeIn'>
             <Typography fontWeight={700}>{pelicula.Descripcion}</Typography>
             <Typography fontWeight={1000}>Genero:</Typography> 
             <Typography fontWeight={500}>{pelicula.genero.Genero}</Typography>
-        </Box>
+        </Box> */}
     </Grid>
   )
 }

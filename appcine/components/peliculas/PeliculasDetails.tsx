@@ -1,4 +1,4 @@
-import { Box, Button, Grid, Typography } from '@mui/material';
+import { Box, Button, Grid, makeStyles, Typography } from '@mui/material';
 import Image from 'next/image';
 import React, { FC, useContext } from 'react'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
@@ -13,10 +13,12 @@ interface Props {
     pelicula: IPelicula
 }
 
+
 const myLoader = ({src, width, quality}) =>{
   return `${src}?s=${width}`
 }
 export const PeliculasDetails:FC<Props> = ({pelicula}) => {
+    
     console.log(pelicula);
     const [value, setValue] = React.useState('1');
 
@@ -26,7 +28,7 @@ export const PeliculasDetails:FC<Props> = ({pelicula}) => {
     const { user } =  useContext(AuthContext); 
     
   return (
-    <Grid container spacing={3}>
+    <Grid container spacing={3} className='grid-background'>
       <Grid item xs={12} sm={12} sx={{ border:0, width:'100%' }} >
         <Box display='flex' flexDirection='row'  >
           <Image

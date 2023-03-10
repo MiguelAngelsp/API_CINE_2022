@@ -26,3 +26,15 @@ footer {
   background-position: center;
 }
 
+.card-background {
+  background-color: rgb(126, 35, 35);
+  background-size: cover;
+}
+
+.grid-background {
+  /* background-color: rgb(126, 35, 35); */
+  background-image: 'url("/public/detalle.jpg")';
+  background-size: cover;
+}
+
+
