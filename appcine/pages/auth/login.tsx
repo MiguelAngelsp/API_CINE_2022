@@ -11,11 +11,13 @@ interface IRespuestaLogin {
     token: string;
     Correo: string;
     password: string;
+    rol: string; // nuevo campo
 }
 type FormData = {
     Correo: string,
     password: string,
 };
+
 const LoginPage = () => { 
     const router = useRouter();
     const { loginUser } = useContext(AuthContext);
@@ -97,3 +99,5 @@ const LoginPage = () => {
 }
 
 export default LoginPage
+
+
