@@ -1,23 +1,56 @@
-version: '3.1'
+# version: '3.1'
 
+# services:
+
+#   psql-db:
+#     image: postgres:12.1-alpine
+#     ports:
+#       - 5432:5442
+#     environment:
+#       POSTGRES_USER: miguel
+#       POSTGRES_PASSWORD: usuario
+#       POSTGRES_DB: bdapicine
+#     container_name: cine-postgreSQL
+#     volumes:
+#       - psql-db-data:/var/lib/postgresql/data
+#     networks:
+#       - ws-network
+
+# volumes:
+#   psql-db-data:
+
+# networks:
+#   ws-network:
+
+version: '3.8'
 services:
-
-  psql-db:
-    image: postgres:12.1-alpine
-    ports:
-      - 5432:5442
+  api:
+    build: .
     environment:
       POSTGRES_USER: miguel
       POSTGRES_PASSWORD: usuario
       POSTGRES_DB: bdapicine
-    container_name: cine-postgreSQL
+      POSTGRES_HOST: 192.168.16.163
+      POSTGRES_PORT: 5432
+      NODE_ENV: production
+    ports:
+      - 3000:3000
+    depends_on:
+      - db
+  db:
+    image: postgres:14-alpine
+    restart: always
+    environment:
+      POSTGRES_USER: miguel
+      POSTGRES_PASSWORD: usuario
+      POSTGRES_DB: bdapicine
+    ports:
+      - 5432:5442
+  nginx:
+    image: nginx:latest
+    ports:
+      - 80:80
+    depends_on:
+      - api
     volumes:
-      - psql-db-data:/var/lib/postgresql/data
-    networks:
-      - ws-network
-
-volumes:
-  psql-db-data:
-
-networks:
-  ws-network:
+      - ./nginx.conf:/etc/nginx/nginx.conf
