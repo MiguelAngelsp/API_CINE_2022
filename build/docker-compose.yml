@@ -1,0 +1,23 @@
+version: '3.1'
+
+services:
+
+  psql-db:
+    image: postgres:12.1-alpine
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER: miguel
+      - POSTGRES_PASSWORD: usuario
+      - POSTGRES_DB: bdapicine
+    container_name: cine-postgreSQL
+    volumes:
+      - psql-db-data:/var/lib/postgresql/data
+    networks:
+      - ws-network
+
+volumes:
+  psql-db-data:
+
+networks:
+  ws-network:
