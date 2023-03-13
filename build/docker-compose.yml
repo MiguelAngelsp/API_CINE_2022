@@ -7,9 +7,9 @@ services:
     ports:
       - 5432:5432
     environment:
-      - POSTGRES_USER: miguel
-      - POSTGRES_PASSWORD: usuario
-      - POSTGRES_DB: bdapicine
+      - POSTGRES_USER: "miguel"
+      - POSTGRES_PASSWORD: "usuario"
+      - POSTGRES_DB: "bdapicine"
     container_name: cine-postgreSQL
     volumes:
       - psql-db-data:/var/lib/postgresql/data
