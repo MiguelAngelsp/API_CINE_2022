@@ -1,35 +1,63 @@
-FROM node:16 as install
-LABEL stage=install
+# Base image
+FROM node:18-alpine
 
-ARG DB_HOST
-ARG DB_NAME
-ARG DB_PORT
-ARG DB_USER
-ARG DB_PASS
-ARG NEST_PORT
-
-ENV DB_HOST=${DB_HOST}
-ENV DB_NAME=${DB_NAME}
-ENV DB_PORT=${DB_PORT}
-ENV DB_USER=${DB_USER}
-ENV DB_PASS=${DB_PASS}
-ENV NEST_PORT=${NEST_PORT}
-
+# Set the working directory to /app
 WORKDIR /app
-COPY ./api_nest/package.json .
-COPY ./api_nest/yarn.lock .
-RUN yarn install --force
 
-COPY ./api_nest .
-RUN yarn build
-RUN yarn config set network-timeout 60000
-RUN yarn install --production=true
+# Copy package.json and package-lock.json
+COPY package*.json ./
 
-FROM nginx:1.19.0-alpine as deploy
-COPY --frominstall /app/dist/main.js /usr/share/nginx/html/index.js
-COPY --frominstall /app/dist/node_modules /usr/share/nginx/html/node_modules
-EXPOSE 80 
-CMD ["nginx", "-g", "daemon off;"]
+# Install dependencies
+RUN npm install
+
+# Copy the rest of the application code
+COPY . .
+
+# Set NODE_ENV to production
+ENV NODE_ENV=production
+
+# Expose port 3000 for the Node.js server
+EXPOSE 3000
+
+# Start the Node.js server
+CMD ["npm", "start"]
+# RUN npm start
+
+# Iniciar NGINX en primer plano
+# CMD ["nginx", "-g", "daemon off;"]
+
+# FROM node:16 as install
+# LABEL stage=install
+
+# ARG DB_HOST
+# ARG DB_NAME
+# ARG DB_PORT
+# ARG DB_USER
+# ARG DB_PASS
+# ARG NEST_PORT
+
+# ENV DB_HOST=${DB_HOST}
+# ENV DB_NAME=${DB_NAME}
+# ENV DB_PORT=${DB_PORT}
+# ENV DB_USER=${DB_USER}
+# ENV DB_PASS=${DB_PASS}
+# ENV NEST_PORT=${NEST_PORT}
+
+# WORKDIR /app
+# COPY ./api_nest/package.json .
+# COPY ./api_nest/yarn.lock .
+# RUN yarn install --force
+
+# COPY ./api_nest .
+# RUN yarn build
+# RUN yarn config set network-timeout 60000
+# RUN yarn install --production=true
+
+# FROM nginx:1.19.0-alpine as deploy
+# COPY --frominstall /app/dist/main.js /usr/share/nginx/html/index.js
+# COPY --frominstall /app/dist/node_modules /usr/share/nginx/html/node_modules
+# EXPOSE 80 
+# CMD ["nginx", "-g", "daemon off;"]
 
 # ENTRYPOINT ["tail", "-f", "/dev/null"]
 # ENTRYPOINT ["node", "main.js"]
