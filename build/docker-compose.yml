@@ -45,7 +45,7 @@ services:
       POSTGRES_PASSWORD: usuario
       POSTGRES_DB: bdapicine
     ports:
-      - 5432:5442
+      - 5442:5432
   nginx:
     image: nginx:latest
     ports:
