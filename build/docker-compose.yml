@@ -30,7 +30,7 @@ services:
       POSTGRES_USER: miguel
       POSTGRES_PASSWORD: usuario
       POSTGRES_DB: bdapicine
-      POSTGRES_HOST: 192.168.16.163
+      POSTGRES_HOST: 149.102.139.206
       POSTGRES_PORT: 5432
       NODE_ENV: production
     ports:
